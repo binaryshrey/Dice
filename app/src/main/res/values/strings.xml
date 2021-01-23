@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Dice</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="dice">DICE</string>
+    <string name="simple_intuitive_dice_roller_app">Simple Intuitive Dice Roller App</string>
+    <string name="get_started">GET STARTED</string>
 </resources>
