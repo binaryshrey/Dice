@@ -5,6 +5,16 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.dice.ui.HomeFragment"
-        android:label="HomeFragment" />
+        android:name="com.example.dice.ui.home.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_diceFragment"
+            app:destination="@id/diceFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/diceFragment"
+        android:name="com.example.dice.ui.dice.DiceFragment"
+        android:label="DiceFragment" />
 </navigation>
