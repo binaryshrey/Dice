@@ -1,13 +1,17 @@
 package dev.shreyansh.dice.ui.game
 
+import android.app.Application
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.google.android.play.core.review.ReviewManagerFactory
 import dev.shreyansh.dice.R
 import timber.log.Timber
 import kotlin.random.Random
 
-class GameViewModel : ViewModel() {
+class GameViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _dice1 = MutableLiveData<Int>()
     val dice1 : LiveData<Int>
@@ -47,5 +51,20 @@ class GameViewModel : ViewModel() {
             else -> R.drawable.dice_6
         }
         return res
+    }
+    fun showRatingDialog(){
+        val reviewManager = ReviewManagerFactory.create(getApplication())
+        val requestReviewFlow = reviewManager.requestReviewFlow()
+        requestReviewFlow.addOnCompleteListener { request ->
+            if (request.isSuccessful) {
+                val reviewInfo = request.result
+                val flow = reviewManager.launchReviewFlow(getApplication(),reviewInfo)
+                flow.addOnCompleteListener {
+                    Timber.i("okay")
+                }
+            } else {
+                Timber.d("Error: ", request.exception.toString())
+            }
+        }
     }
 }
