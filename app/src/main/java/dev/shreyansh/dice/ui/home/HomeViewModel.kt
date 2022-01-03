@@ -1,9 +1,9 @@
 package dev.shreyansh.dice.ui.home
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import timber.log.Timber
 
 class HomeViewModel : ViewModel() {
 
@@ -12,7 +12,7 @@ class HomeViewModel : ViewModel() {
         get() = _eventGameStart
 
     init {
-        Log.i("HomeViewModel","HomeViewModel created")
+        Timber.i("HomeViewModel created")
         _eventGameStart.value = false
     }
 

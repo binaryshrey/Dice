@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import dev.shreyansh.dice.R
 import dev.shreyansh.dice.databinding.FragmentHomeBinding
+import timber.log.Timber
 
 
 class HomeFragment : Fragment() {
@@ -27,8 +28,9 @@ class HomeFragment : Fragment() {
         (activity as AppCompatActivity).supportActionBar?.hide()
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_home,container,false)
 
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        Timber.i("HomeFragment inflated")
 
+        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         binding.viewModel = viewModel
         binding.setLifecycleOwner(this)
 
@@ -38,8 +40,6 @@ class HomeFragment : Fragment() {
                 viewModel.onGameStartComplete()
             }
         })
-
         return binding.root
     }
-
 }
