@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import dev.shreyansh.dice.R
 import dev.shreyansh.dice.databinding.FragmentGameBinding
 import timber.log.Timber
@@ -42,7 +43,7 @@ class GameFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.aboutFragment -> Toast.makeText(context,"About",Toast.LENGTH_SHORT).show()
+            R.id.aboutFragment -> findNavController().navigate(R.id.action_gameFragment_to_aboutFragment)
             R.id.rateUs -> Toast.makeText(context,"Rate",Toast.LENGTH_SHORT).show()
             R.id.shareBugReport -> Toast.makeText(context,"Bug",Toast.LENGTH_SHORT).show()
         }

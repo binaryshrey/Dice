@@ -9,4 +9,5 @@
     <dimen name="dimen_32">32dp</dimen>
     <dimen name="dimen_200">200dp</dimen>
     <dimen name="dimen_20sp">20sp</dimen>
+    <dimen name="dimen_14sp">14sp</dimen>
 </resources>

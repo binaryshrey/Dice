@@ -17,6 +17,15 @@
     <fragment
         android:id="@+id/gameFragment"
         android:name="dev.shreyansh.dice.ui.game.GameFragment"
-        android:label="fragment_game"
-        tools:layout="@layout/fragment_game" />
+        android:label="DICE"
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_gameFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="dev.shreyansh.dice.ui.about.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_about" />
 </navigation>
