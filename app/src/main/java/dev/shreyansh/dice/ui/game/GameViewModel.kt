@@ -1,7 +1,10 @@
 package dev.shreyansh.dice.ui.game
 
 import android.app.Application
+import android.content.Intent
+import android.net.Uri
 import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
