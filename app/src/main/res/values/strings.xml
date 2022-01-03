@@ -1,9 +1,15 @@
 <resources>
-    <string name="app_name">Dice</string>
+    <string name="app_name">DICE</string>
     <string name="dice">DICE</string>
     <string name="a_minimalistic_dice_roll_app">A minimalistic dice roll app</string>
     <string name="get_started">get started</string>
     <string name="dice1">Dice1</string>
     <string name="dice2">Dice2</string>
     <string name="roll">Roll</string>
+    <string name="about">About</string>
+    <string name="rate_us">Rate us</string>
+    <string name="share_bug_report">Share Bug Report</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="a_simple_intuitive_minimalistic_and_ad_free_dice_roll_application">DICE is a simple, intuitive, minimalistic and ad-free virtual dice roll application with which you can play your favorite board games.</string>
 </resources>
