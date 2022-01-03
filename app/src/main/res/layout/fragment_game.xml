@@ -3,11 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="dev.shreyansh.dice.ui.game.GameViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/gameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.GameFragment">
+        tools:context=".ui.game.GameFragment">
 
         <ImageView
             android:id="@+id/dice1_imageView"
@@ -21,7 +27,7 @@
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/empty_dice" />
+            app:imageResource="@{viewModel.dice1}" />
 
         <ImageView
             android:id="@+id/dice2_imageView"
@@ -34,7 +40,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/dice1_imageView"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/empty_dice" />
+            app:imageResource="@{viewModel.dice2}" />
 
 
         <TextView
@@ -44,6 +50,7 @@
             android:layout_marginTop="@dimen/dimen_16"
             android:layout_marginBottom="@dimen/dimen_16"
             android:textSize="@dimen/dimen_20sp"
+            android:text="@{viewModel.result}"
             app:layout_constraintBottom_toTopOf="@+id/roll_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -58,6 +65,7 @@
             android:layout_marginEnd="@dimen/dimen_56"
             android:layout_marginBottom="@dimen/dimen_24"
             android:text="@string/roll"
+            android:onClick="@{() -> viewModel.roll()}"
             android:textColor="@color/white"
             app:backgroundTint="@color/dark_grey"
             app:cornerRadius="@dimen/dimen_32"

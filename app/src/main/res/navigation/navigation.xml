@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
-        android:name="dev.shreyansh.dice.ui.GameFragment"
+        android:name="dev.shreyansh.dice.ui.game.GameFragment"
         android:label="fragment_game"
         tools:layout="@layout/fragment_game" />
 </navigation>
