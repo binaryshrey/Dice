@@ -3,4 +3,7 @@
     <string name="dice">DICE</string>
     <string name="a_minimalistic_dice_roll_app">A minimalistic dice roll app</string>
     <string name="get_started">get started</string>
+    <string name="dice1">Dice1</string>
+    <string name="dice2">Dice2</string>
+    <string name="roll">Roll</string>
 </resources>
