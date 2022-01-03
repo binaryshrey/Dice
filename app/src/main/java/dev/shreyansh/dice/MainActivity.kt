@@ -19,12 +19,10 @@ class MainActivity : AppCompatActivity() {
         val topLevelDestination = mutableSetOf<Int>()
         topLevelDestination.add(R.id.homeFragment)
         topLevelDestination.add(R.id.gameFragment)
-
         val appBarConfiguration : AppBarConfiguration = AppBarConfiguration.Builder(topLevelDestination).build()
 
         val navController = this.findNavController(R.id.nav_host_fragment_container)
         NavigationUI.setupActionBarWithNavController(this, navController,appBarConfiguration)
-
     }
 
     override fun onSupportNavigateUp(): Boolean {

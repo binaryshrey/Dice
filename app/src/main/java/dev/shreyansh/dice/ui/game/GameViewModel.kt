@@ -27,7 +27,6 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     val result : LiveData<String>
         get() = _result
 
-
     init {
         Timber.i("GameViewModel created")
         _dice1.value = R.drawable.empty_dice
@@ -76,7 +75,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
                 val reviewInfo = request.result
                 val flow = reviewManager.launchReviewFlow(getApplication(),reviewInfo)
                 flow.addOnCompleteListener {
-                    Timber.i("okay")
+                    Timber.i("review invoked")
                 }
             } else {
                 Timber.d("Error: ", request.exception.toString())
