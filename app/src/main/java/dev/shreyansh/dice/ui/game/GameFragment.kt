@@ -47,7 +47,7 @@ class GameFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.aboutFragment -> findNavController().navigate(R.id.action_gameFragment_to_aboutFragment)
-            R.id.rateUs -> viewModel.showRatingDialog()
+            R.id.rateUs -> Toast.makeText(context,"Rate us",Toast.LENGTH_SHORT).show()
             R.id.shareBugReport -> bugReport()
         }
         return super.onOptionsItemSelected(item)
