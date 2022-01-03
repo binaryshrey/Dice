@@ -6,4 +6,7 @@
     <string name="dice1">Dice1</string>
     <string name="dice2">Dice2</string>
     <string name="roll">Roll</string>
+    <string name="about">About</string>
+    <string name="rate_us">Rate us</string>
+    <string name="share_bug_report">Share Bug Report</string>
 </resources>
