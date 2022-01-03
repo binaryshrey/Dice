@@ -1,14 +1,13 @@
 package dev.shreyansh.dice.ui.game
 
 import android.app.Application
-import android.content.Intent
-import android.net.Uri
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.core.content.ContextCompat.startActivity
+import android.content.Context
+import android.os.Build
+import android.os.VibrationEffect
+import android.os.Vibrator
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.google.android.play.core.review.ReviewManagerFactory
 import dev.shreyansh.dice.R
 import timber.log.Timber
@@ -37,11 +36,25 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun roll() {
+        provideHapticFeedback()
         val randomIntOne : Int = Random.nextInt(6) + 1
         val randomIntTwo : Int = Random.nextInt(6) + 1
         _dice1.value = setImage(randomIntOne)
         _dice2.value = setImage(randomIntTwo)
         _result.value = "You Rolled : ${(randomIntOne+randomIntTwo).toString()}"
+    }
+
+    private fun provideHapticFeedback(){
+        val vibrator = getApplication<Application>().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        if (vibrator.hasVibrator()) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                // New vibrate method for API Level 26 or higher
+                vibrator.vibrate(VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE))
+            } else {
+                // Vibrate method for below API Level 26
+                vibrator.vibrate(100)
+            }
+        }
     }
 
     private fun setImage(rand : Int): Int {
