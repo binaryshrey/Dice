@@ -1,3 +1,7 @@
+@file:Suppress("RedundantNullableReturnType", "RedundantNullableReturnType",
+    "RedundantNullableReturnType"
+)
+
 package dev.shreyansh.dice.ui.about
 
 import android.os.Bundle

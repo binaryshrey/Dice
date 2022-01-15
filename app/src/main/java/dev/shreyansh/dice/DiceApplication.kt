@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package dev.shreyansh.dice
 
 import android.app.Application

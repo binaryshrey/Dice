@@ -1,3 +1,5 @@
+@file:Suppress("RemoveToStringInStringTemplate", "unused")
+
 package dev.shreyansh.dice.ui.game
 
 import android.app.Application

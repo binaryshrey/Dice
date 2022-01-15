@@ -16,6 +16,9 @@ jobs :
         with:
           java-version : 11
 
+      - name: Check Lint
+        run: sudo ./gradlew lintDebug
+
       - name: Build Project
         run : ./gradlew assemble
 

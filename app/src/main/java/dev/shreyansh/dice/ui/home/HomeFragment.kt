@@ -1,3 +1,5 @@
+@file:Suppress("UsePropertyAccessSyntax", "RedundantSamConstructor", "RedundantNullableReturnType")
+
 package dev.shreyansh.dice.ui.home
 
 import android.os.Bundle

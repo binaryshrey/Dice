@@ -1,3 +1,7 @@
+@file:Suppress("UsePropertyAccessSyntax", "UsePropertyAccessSyntax", "RedundantNullableReturnType",
+    "RedundantNullableReturnType"
+)
+
 package dev.shreyansh.dice.ui.game
 
 import android.content.Intent
@@ -53,7 +57,7 @@ class GameFragment : Fragment() {
         return super.onOptionsItemSelected(item)
     }
 
-    fun bugReport() {
+    private fun bugReport() {
         startActivity(composeBugReport(address, subject))
     }
 
