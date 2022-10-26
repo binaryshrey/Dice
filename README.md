@@ -1,4 +1,4 @@
-![Banner](https://raw.githubusercontent.com/binaryshrey/Dice/main/banner.png)
+![Banner](https://raw.githubusercontent.com/binaryshrey/Dice/main/banner.webp)
 
 # Dice 🎲
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/binaryShrey/Dice/Android%20Build)
