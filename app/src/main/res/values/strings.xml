@@ -11,4 +11,5 @@
     <string name="share_bug_report">Share Bug Report</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="a_simple_intuitive_minimalistic_and_ad_free_dice_roll_application">DICE is a simple, intuitive, minimalistic and ad-free virtual dice roll application with which you can play your favorite board games.</string>
+    <string name="banner">banner</string>
 </resources>

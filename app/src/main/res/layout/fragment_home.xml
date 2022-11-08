@@ -20,7 +20,7 @@
             android:id="@+id/appname_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dimen_56"
+            android:layout_marginStart="@dimen/dimen_48"
             android:text="@string/dice"
             android:textColor="@color/white"
             android:textSize="@dimen/dimen_34sp"
@@ -30,13 +30,13 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.60" />
+            app:layout_constraintVertical_bias="0.770" />
 
         <TextView
             android:id="@+id/tagline_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dimen_56"
+            android:layout_marginStart="@dimen/dimen_48"
             android:layout_marginTop="@dimen/dimen_16"
             android:layout_marginBottom="@dimen/dimen_16"
             android:text="@string/a_minimalistic_dice_roll_app"
@@ -53,17 +53,29 @@
             android:id="@+id/next_button"
             android:layout_width="@dimen/dimen_0"
             android:layout_height="@dimen/dimen_64"
-            android:layout_marginStart="@dimen/dimen_56"
-            android:layout_marginEnd="@dimen/dimen_56"
+            android:layout_marginStart="@dimen/dimen_48"
+            android:layout_marginEnd="@dimen/dimen_48"
             android:layout_marginBottom="@dimen/dimen_24"
-            android:text="@string/get_started"
             android:onClick="@{() -> viewModel.onGameStart()}"
+            android:text="@string/get_started"
             android:textColor="@color/black"
             app:backgroundTint="@color/white"
             app:cornerRadius="@dimen/dimen_32"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:contentDescription="@string/banner"
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="500dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/banner" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
