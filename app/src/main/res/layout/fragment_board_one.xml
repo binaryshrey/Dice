@@ -52,7 +52,7 @@
             android:layout_marginEnd="@dimen/dimen_56"
             android:layout_marginBottom="@dimen/dimen_24"
             android:text="@string/roll"
-            android:onClick="@{() -> viewModel.roll()}"
+            android:onClick="@{() -> viewModel.rollBoardOne()}"
             android:textColor="@color/white"
             app:backgroundTint="@color/dark_grey"
             app:cornerRadius="@dimen/dimen_32"
