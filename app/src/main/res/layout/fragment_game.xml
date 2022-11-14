@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="dev.shreyansh.dice.ui.viewModel.DiceViewModel" />
+            type="dev.shreyansh.dice.viewModel.DiceViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -12,7 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import dev.shreyansh.dice.R
 import dev.shreyansh.dice.databinding.FragmentIntroBinding
-import dev.shreyansh.dice.ui.viewModel.DiceViewModel
+import dev.shreyansh.dice.viewModel.DiceViewModel
 import timber.log.Timber
 
 

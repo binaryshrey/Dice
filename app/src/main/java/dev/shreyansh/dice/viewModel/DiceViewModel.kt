@@ -1,4 +1,4 @@
-package dev.shreyansh.dice.ui.viewModel
+package dev.shreyansh.dice.viewModel
 
 import android.app.Application
 import android.content.Context

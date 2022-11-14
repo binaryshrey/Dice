@@ -9,11 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import dev.shreyansh.dice.R
 import dev.shreyansh.dice.databinding.FragmentGameBinding
-import dev.shreyansh.dice.ui.viewModel.DiceViewModel
+import dev.shreyansh.dice.viewModel.DiceViewModel
 import timber.log.Timber
 
 class GameFragment : Fragment() {
