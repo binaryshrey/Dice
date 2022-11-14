@@ -1,4 +1,4 @@
-package dev.shreyansh.dice.ui.home
+package dev.shreyansh.dice.ui.intro
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,14 +11,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import dev.shreyansh.dice.R
-import dev.shreyansh.dice.databinding.FragmentHomeBinding
+import dev.shreyansh.dice.databinding.FragmentIntroBinding
 import timber.log.Timber
 
 
-class HomeFragment : Fragment() {
+class IntroFragment : Fragment() {
 
-    private lateinit var binding : FragmentHomeBinding
-    private lateinit var viewModel: HomeViewModel
+    private lateinit var binding : FragmentIntroBinding
+    private lateinit var viewModel: IntroViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,17 +26,17 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         (activity as AppCompatActivity).supportActionBar?.hide()
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_home,container,false)
+        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_intro,container,false)
 
-        Timber.i("HomeFragment inflated")
+        Timber.i("IntroFragment inflated")
 
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(IntroViewModel::class.java)
         binding.viewModel = viewModel
         binding.setLifecycleOwner(this)
 
         viewModel.eventGameStart.observe(viewLifecycleOwner, Observer { hasStarted ->
             if(hasStarted){
-                findNavController().navigate(R.id.action_homeFragment_to_gameFragment)
+                findNavController().navigate(R.id.action_introFragment_to_gameFragment)
                 viewModel.onGameStartComplete()
             }
         })

@@ -6,15 +6,15 @@
     <data>
         <variable
             name="viewModel"
-            type="dev.shreyansh.dice.ui.home.HomeViewModel" />
+            type="dev.shreyansh.dice.ui.intro.IntroViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/homeLayout"
+        android:id="@+id/introLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/black"
-        tools:context=".ui.home.HomeFragment">
+        tools:context=".ui.intro.IntroFragment">
 
         <TextView
             android:id="@+id/appname_textView"

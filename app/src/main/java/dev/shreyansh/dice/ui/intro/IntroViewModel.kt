@@ -1,11 +1,11 @@
-package dev.shreyansh.dice.ui.home
+package dev.shreyansh.dice.ui.intro
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import timber.log.Timber
 
-class HomeViewModel : ViewModel() {
+class IntroViewModel : ViewModel() {
 
     private val _eventGameStart = MutableLiveData<Boolean>()
     val eventGameStart : LiveData<Boolean>
