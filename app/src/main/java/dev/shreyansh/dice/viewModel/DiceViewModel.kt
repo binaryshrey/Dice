@@ -18,6 +18,10 @@ class DiceViewModel(application: Application) : AndroidViewModel(application) {
     val eventGameStart : LiveData<Boolean>
         get() = _eventGameStart
 
+    private val _eventGameIntro = MutableLiveData<Boolean>()
+    val eventGameIntro : LiveData<Boolean>
+        get() = _eventGameIntro
+
     private val _dice1 = MutableLiveData<Int>()
     val dice1 : LiveData<Int>
         get() = _dice1
@@ -44,6 +48,14 @@ class DiceViewModel(application: Application) : AndroidViewModel(application) {
 
     fun onGameStartComplete(){
         _eventGameStart.value = false
+    }
+
+    fun onGameIntro(){
+        _eventGameIntro.value = true
+    }
+
+    fun onGameIntroComplete(){
+        _eventGameIntro.value = false
     }
 
     fun roll() {

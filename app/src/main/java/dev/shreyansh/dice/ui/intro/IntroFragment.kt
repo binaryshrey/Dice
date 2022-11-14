@@ -32,12 +32,12 @@ class IntroFragment : Fragment() {
         Timber.i("IntroFragment inflated")
 
         binding.viewModel = viewModel
-        binding.setLifecycleOwner(this)
+        binding.lifecycleOwner = this
 
-        viewModel.eventGameStart.observe(viewLifecycleOwner, Observer { hasStarted ->
-            if(hasStarted){
+        viewModel.eventGameIntro.observe(viewLifecycleOwner, Observer { hasFinished ->
+            if(hasFinished){
                 findNavController().navigate(R.id.action_introFragment_to_prefsFragment)
-                viewModel.onGameStartComplete()
+                viewModel.onGameIntroComplete()
             }
         })
         return binding.root
