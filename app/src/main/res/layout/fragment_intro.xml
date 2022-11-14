@@ -60,7 +60,7 @@
             android:layout_marginEnd="@dimen/dimen_48"
             android:layout_marginBottom="@dimen/dimen_24"
             android:fontFamily="@font/montserrat"
-            android:onClick="@{() -> viewModel.onGameStart()}"
+            android:onClick="@{() -> viewModel.onGameIntro()}"
             android:text="@string/get_started"
             android:textColor="@color/black"
             app:backgroundTint="@color/white"
