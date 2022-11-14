@@ -88,6 +88,16 @@ class DiceViewModel(application: Application) : AndroidViewModel(application) {
         _result.value = "You Rolled : ${(randomIntOne).toString()}"
     }
 
+    fun rollBoardTwo(){
+        provideHapticFeedback()
+        val randomIntOne : Int = Random.nextInt(6) + 1
+        val randomIntTwo : Int = Random.nextInt(6) + 1
+        _dice1.value = setImage(randomIntOne)
+        _dice2.value = setImage(randomIntTwo)
+        _result.value = "You Rolled : ${(randomIntOne+randomIntTwo).toString()}"
+    }
+
+
     private fun setImage(rand : Int): Int {
         val res = when(rand){
             1 -> R.drawable.dice_1
