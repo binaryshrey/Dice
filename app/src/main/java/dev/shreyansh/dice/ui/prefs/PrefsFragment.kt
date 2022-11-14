@@ -21,10 +21,35 @@ class PrefsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_prefs, container, false)
+
+        binding.cardOne.setOnClickListener {
+            uncheckCards()
+            binding.cardOne.isChecked = true
+        }
+        binding.cardTwo.setOnClickListener {
+            uncheckCards()
+            binding.cardTwo.isChecked = true
+        }
+        binding.cardThree.setOnClickListener {
+            uncheckCards()
+            binding.cardThree.isChecked = true
+        }
+        binding.cardFour.setOnClickListener {
+            uncheckCards()
+            binding.cardFour.isChecked = true
+        }
+
         binding.playButton.setOnClickListener {
             view?.findNavController()?.navigate(R.id.action_prefsFragment_to_gameFragment)
         }
         return binding.root
+    }
+
+    private fun uncheckCards(){
+        binding.cardOne.isChecked = false
+        binding.cardTwo.isChecked = false
+        binding.cardThree.isChecked = false
+        binding.cardFour.isChecked = false
     }
 
 }
