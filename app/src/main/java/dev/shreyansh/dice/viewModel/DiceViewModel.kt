@@ -30,6 +30,14 @@ class DiceViewModel(application: Application) : AndroidViewModel(application) {
     val dice2 : LiveData<Int>
         get() = _dice2
 
+    private val _dice3 = MutableLiveData<Int>()
+    val dice3 : LiveData<Int>
+        get() = _dice3
+
+    private val _dice4= MutableLiveData<Int>()
+    val dice4 : LiveData<Int>
+        get() = _dice4
+
     private val _result= MutableLiveData<String>()
     val result : LiveData<String>
         get() = _result
@@ -95,6 +103,17 @@ class DiceViewModel(application: Application) : AndroidViewModel(application) {
         _dice1.value = setImage(randomIntOne)
         _dice2.value = setImage(randomIntTwo)
         _result.value = "You Rolled : ${(randomIntOne+randomIntTwo).toString()}"
+    }
+
+    fun rollBoardThree(){
+        provideHapticFeedback()
+        val randomIntOne : Int = Random.nextInt(6) + 1
+        val randomIntTwo : Int = Random.nextInt(6) + 1
+        val randomIntThree : Int = Random.nextInt(6) + 1
+        _dice1.value = setImage(randomIntOne)
+        _dice2.value = setImage(randomIntTwo)
+        _dice3.value = setImage(randomIntThree)
+        _result.value = "You Rolled : ${(randomIntOne+randomIntTwo+randomIntThree).toString()}"
     }
 
 
