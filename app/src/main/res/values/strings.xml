@@ -12,4 +12,16 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="a_simple_intuitive_minimalistic_and_ad_free_dice_roll_application">DICE is a simple, intuitive, minimalistic and ad-free virtual dice roll application with which you can play your favorite board games.</string>
     <string name="banner">banner</string>
+    <string name="choose_your_dice_s_board">Choose your dice(s) board :</string>
+    <string name="one">One</string>
+    <string name="diceone_imageview">diceOne_imageView</string>
+    <string name="suitable_for_single_player_board_games">Suitable for single-player board games</string>
+    <string name="two">Two</string>
+    <string name="suitable_for_multi_player_board_games">Suitable for multi-player board games</string>
+    <string name="three">Three</string>
+    <string name="four">Four</string>
+    <string name="play">Play</string>
+    <string name="dicetwo_imageview">diceTwo_imageView</string>
+    <string name="dicethree_imageview">diceThree_imageView</string>
+    <string name="dicefour_imageview">diceFour_imageView</string>
 </resources>

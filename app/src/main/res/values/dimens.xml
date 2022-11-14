@@ -12,4 +12,8 @@
     <dimen name="dimen_14sp">14sp</dimen>
     <dimen name="dimen_64">64dp</dimen>
     <dimen name="dimen_48">48dp</dimen>
+    <dimen name="dimen_120">120dp</dimen>
+    <dimen name="dimen_20">20dp</dimen>
+    <dimen name="dimen_8">8dp</dimen>
+    <dimen name="dimen_12sp">12sp</dimen>
 </resources>
