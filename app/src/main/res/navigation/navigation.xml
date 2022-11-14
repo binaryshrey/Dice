@@ -25,6 +25,8 @@
         android:label="IntroFragment" >
         <action
             android:id="@+id/action_introFragment_to_gameFragment"
-            app:destination="@id/gameFragment" />
+            app:destination="@id/gameFragment"
+            app:popUpTo="@id/introFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

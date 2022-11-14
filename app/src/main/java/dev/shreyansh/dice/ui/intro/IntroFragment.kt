@@ -7,18 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import dev.shreyansh.dice.R
 import dev.shreyansh.dice.databinding.FragmentIntroBinding
+import dev.shreyansh.dice.ui.viewModel.DiceViewModel
 import timber.log.Timber
 
 
 class IntroFragment : Fragment() {
 
     private lateinit var binding : FragmentIntroBinding
-    private lateinit var viewModel: IntroViewModel
+    private val viewModel: DiceViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +31,6 @@ class IntroFragment : Fragment() {
 
         Timber.i("IntroFragment inflated")
 
-        viewModel = ViewModelProvider(this).get(IntroViewModel::class.java)
         binding.viewModel = viewModel
         binding.setLifecycleOwner(this)
 

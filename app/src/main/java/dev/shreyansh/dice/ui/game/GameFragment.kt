@@ -8,16 +8,18 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import dev.shreyansh.dice.R
 import dev.shreyansh.dice.databinding.FragmentGameBinding
+import dev.shreyansh.dice.ui.viewModel.DiceViewModel
 import timber.log.Timber
 
 class GameFragment : Fragment() {
 
     private lateinit var binding: FragmentGameBinding
-    private lateinit var viewModel: GameViewModel
+    private val viewModel: DiceViewModel by activityViewModels()
 
     private val address = arrayOf("binaryshrey.dev@gmail.com")
     private val subject: String = "DICE : Bug Report"
@@ -32,9 +34,8 @@ class GameFragment : Fragment() {
         setHasOptionsMenu(true)
         Timber.i("GameFragment Inflated")
 
-        viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
         binding.viewModel = viewModel
-        binding.setLifecycleOwner(this)
+        binding.lifecycleOwner = this
 
         return binding.root
     }

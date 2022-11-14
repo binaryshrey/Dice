@@ -1,4 +1,4 @@
-package dev.shreyansh.dice.ui.game
+package dev.shreyansh.dice.ui.viewModel
 
 import android.app.Application
 import android.content.Context
@@ -8,12 +8,15 @@ import android.os.Vibrator
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.google.android.play.core.review.ReviewManagerFactory
 import dev.shreyansh.dice.R
 import timber.log.Timber
 import kotlin.random.Random
 
-class GameViewModel(application: Application) : AndroidViewModel(application) {
+class DiceViewModel(application: Application) : AndroidViewModel(application) {
+
+    private val _eventGameStart = MutableLiveData<Boolean>()
+    val eventGameStart : LiveData<Boolean>
+        get() = _eventGameStart
 
     private val _dice1 = MutableLiveData<Int>()
     val dice1 : LiveData<Int>
@@ -28,10 +31,19 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         get() = _result
 
     init {
-        Timber.i("GameViewModel created")
+        Timber.i("DiceViewModel created")
+        _eventGameStart.value = false
         _dice1.value = R.drawable.empty_dice
         _dice2.value = R.drawable.empty_dice
         _result.value = ""
+    }
+
+    fun onGameStart(){
+        _eventGameStart.value = true
+    }
+
+    fun onGameStartComplete(){
+        _eventGameStart.value = false
     }
 
     fun roll() {
@@ -67,19 +79,5 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
         }
         return res
     }
-    fun showRatingDialog(){
-        val reviewManager = ReviewManagerFactory.create(getApplication())
-        val requestReviewFlow = reviewManager.requestReviewFlow()
-        requestReviewFlow.addOnCompleteListener { request ->
-            if (request.isSuccessful) {
-                val reviewInfo = request.result
-                val flow = reviewManager.launchReviewFlow(getApplication(),reviewInfo)
-                flow.addOnCompleteListener {
-                    Timber.i("review invoked")
-                }
-            } else {
-                Timber.d("Error: ", request.exception.toString())
-            }
-        }
-    }
+
 }
