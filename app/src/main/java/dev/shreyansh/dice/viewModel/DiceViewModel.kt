@@ -37,6 +37,7 @@ class DiceViewModel(application: Application) : AndroidViewModel(application) {
     init {
         Timber.i("DiceViewModel created")
         _eventGameStart.value = false
+        _eventGameIntro.value = false
         _dice1.value = R.drawable.empty_dice
         _dice2.value = R.drawable.empty_dice
         _result.value = ""
