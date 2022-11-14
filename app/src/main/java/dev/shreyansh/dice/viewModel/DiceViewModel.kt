@@ -116,6 +116,21 @@ class DiceViewModel(application: Application) : AndroidViewModel(application) {
         _result.value = "You Rolled : ${(randomIntOne+randomIntTwo+randomIntThree).toString()}"
     }
 
+    fun rollBoardFour(){
+        provideHapticFeedback()
+        val randomIntOne : Int = Random.nextInt(6) + 1
+        val randomIntTwo : Int = Random.nextInt(6) + 1
+        val randomIntThree : Int = Random.nextInt(6) + 1
+        val randomIntFour : Int = Random.nextInt(6) + 1
+
+        _dice1.value = setImage(randomIntOne)
+        _dice2.value = setImage(randomIntTwo)
+        _dice3.value = setImage(randomIntThree)
+        _dice4.value = setImage(randomIntFour)
+        _result.value = "You Rolled : ${(randomIntOne+randomIntTwo+randomIntThree+randomIntFour).toString()}"
+
+    }
+
 
     private fun setImage(rand : Int): Int {
         val res = when(rand){
