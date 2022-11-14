@@ -24,7 +24,15 @@
         android:name="dev.shreyansh.dice.ui.intro.IntroFragment"
         android:label="IntroFragment" >
         <action
-            android:id="@+id/action_introFragment_to_gameFragment"
+            android:id="@+id/action_introFragment_to_prefsFragment"
+            app:destination="@id/prefsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/prefsFragment"
+        android:name="dev.shreyansh.dice.ui.prefs.PrefsFragment"
+        android:label="PrefsFragment" >
+        <action
+            android:id="@+id/action_prefsFragment_to_gameFragment"
             app:destination="@id/gameFragment"
             app:popUpTo="@id/introFragment"
             app:popUpToInclusive="true" />
