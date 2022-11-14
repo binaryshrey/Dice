@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="dev.shreyansh.dice.viewModel.DiceViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/boardOneLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.game.BoardOneFragment">
+
+        <ImageView
+            android:id="@+id/dice1_imageView"
+            android:layout_width="@dimen/dimen_200"
+            android:layout_height="@dimen/dimen_200"
+            android:layout_marginBottom="@dimen/dimen_16"
+            android:contentDescription="@string/dice1"
+            app:imageResource="@{viewModel.dice1}"
+            app:layout_constraintBottom_toTopOf="@+id/roll_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/result_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginBottom="@dimen/dimen_16"
+            android:textSize="@dimen/dimen_20sp"
+            android:text="@{viewModel.result}"
+            app:layout_constraintBottom_toTopOf="@+id/roll_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dice1_imageView"
+            tools:text="You rolled : 10" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/roll_button"
+            android:layout_width="@dimen/dimen_0"
+            android:layout_height="@dimen/dimen_64"
+            android:layout_marginStart="@dimen/dimen_56"
+            android:layout_marginEnd="@dimen/dimen_56"
+            android:layout_marginBottom="@dimen/dimen_24"
+            android:text="@string/roll"
+            android:onClick="@{() -> viewModel.roll()}"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/dark_grey"
+            app:cornerRadius="@dimen/dimen_32"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
