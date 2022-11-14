@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable/dice_1.xml" value="0.30666666666666664" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_about.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_board_four.xml" value="0.18501628664495115" />
         <entry key="app/src/main/res/layout/fragment_board_one.xml" value="0.29907407407407405" />
         <entry key="app/src/main/res/layout/fragment_board_three.xml" value="0.19381107491856678" />
         <entry key="app/src/main/res/layout/fragment_board_two.xml" value="0.15520833333333334" />

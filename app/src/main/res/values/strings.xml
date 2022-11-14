@@ -25,4 +25,5 @@
     <string name="dicethree_imageview">diceThree_imageView</string>
     <string name="dicefour_imageview">diceFour_imageView</string>
     <string name="dice3">dice3</string>
+    <string name="dice4">dice4</string>
 </resources>
