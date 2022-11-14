@@ -36,7 +36,7 @@ class IntroFragment : Fragment() {
 
         viewModel.eventGameStart.observe(viewLifecycleOwner, Observer { hasStarted ->
             if(hasStarted){
-                findNavController().navigate(R.id.action_introFragment_to_gameFragment)
+                findNavController().navigate(R.id.action_introFragment_to_prefsFragment)
                 viewModel.onGameStartComplete()
             }
         })
