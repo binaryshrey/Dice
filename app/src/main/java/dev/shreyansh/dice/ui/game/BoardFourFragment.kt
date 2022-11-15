@@ -1,10 +1,9 @@
 package dev.shreyansh.dice.ui.game
 
 import android.os.Bundle
+import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
@@ -27,7 +26,21 @@ class BoardFourFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_board_four, container, false)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
+        setHasOptionsMenu(true)
         return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.aboutFragment -> Toast.makeText(context,"Rate us", Toast.LENGTH_SHORT).show()
+            R.id.settings -> Toast.makeText(context,"Settings", Toast.LENGTH_SHORT).show()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 

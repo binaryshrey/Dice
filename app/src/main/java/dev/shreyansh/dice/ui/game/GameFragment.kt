@@ -45,10 +45,10 @@ class GameFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.rateUs -> Toast.makeText(context,"Rate us",Toast.LENGTH_SHORT).show()
-            R.id.shareBugReport -> bugReport()
-        }
+//        when (item.itemId) {
+//            R.id.rateUs -> Toast.makeText(context,"Rate us",Toast.LENGTH_SHORT).show()
+//            R.id.shareBugReport -> bugReport()
+//        }
         return super.onOptionsItemSelected(item)
     }
 
