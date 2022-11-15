@@ -1,0 +1,28 @@
+<resources>
+    <string-array name="theme_entries">
+        <item>Light Mode</item>
+        <item>Dark Mode</item>
+        <item>System Default</item>
+    </string-array>
+
+    <string-array name="theme_values">
+        <item>Light Mode</item>
+        <item>Dark Mode</item>
+        <item>System Default</item>
+    </string-array>
+
+    <string-array name="board_entries">
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+        <item>Four</item>
+    </string-array>
+
+    <string-array name="board_values">
+        <item>one</item>
+        <item>two</item>
+        <item>three</item>
+        <item>four</item>
+    </string-array>
+
+</resources>
