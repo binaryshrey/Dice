@@ -20,11 +20,13 @@
             android:id="@+id/dice0_imageView"
             android:layout_width="@dimen/dimen_200"
             android:layout_height="@dimen/dimen_200"
+            android:layout_marginTop="@dimen/dimen_128"
             android:contentDescription="@string/dice3"
             app:imageResource="@{viewModel.dice1}"
             app:layout_constraintBottom_toTopOf="@+id/dice1_imageView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/dice1_imageView"

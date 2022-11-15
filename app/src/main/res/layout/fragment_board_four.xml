@@ -20,20 +20,24 @@
             android:id="@+id/dice1_imageView"
             android:layout_width="@dimen/dimen_200"
             android:layout_height="@dimen/dimen_200"
+            android:layout_marginTop="@dimen/dimen_80"
             android:contentDescription="@string/dice1"
             app:imageResource="@{viewModel.dice1}"
             app:layout_constraintBottom_toTopOf="@+id/dice3_imageView"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/dice2_imageView"
             android:layout_width="@dimen/dimen_200"
             android:layout_height="@dimen/dimen_200"
+            android:layout_marginTop="@dimen/dimen_80"
             android:contentDescription="@string/dice2"
             app:imageResource="@{viewModel.dice2}"
             app:layout_constraintBottom_toTopOf="@+id/dice3_imageView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/dice1_imageView" />
+            app:layout_constraintStart_toEndOf="@+id/dice1_imageView"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/dice3_imageView"
@@ -74,7 +78,7 @@
             app:layout_constraintBottom_toTopOf="@+id/roll_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dice1_imageView"
+            app:layout_constraintTop_toBottomOf="@+id/dice3_imageView"
             tools:text="You rolled : 10" />
 
         <com.google.android.material.button.MaterialButton

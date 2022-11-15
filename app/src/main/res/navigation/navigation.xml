@@ -6,15 +6,6 @@
     app:startDestination="@id/introFragment">
 
     <fragment
-        android:id="@+id/gameFragment"
-        android:name="dev.shreyansh.dice.ui.game.GameFragment"
-        android:label="DICE"
-        tools:layout="@layout/fragment_game" >
-        <action
-            android:id="@+id/action_gameFragment_to_aboutFragment"
-            app:destination="@id/aboutFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/aboutFragment"
         android:name="dev.shreyansh.dice.ui.about.AboutFragment"
         android:label="About"
@@ -32,9 +23,56 @@
         android:name="dev.shreyansh.dice.ui.prefs.PrefsFragment"
         android:label="PrefsFragment" >
         <action
-            android:id="@+id/action_prefsFragment_to_gameFragment"
-            app:destination="@id/gameFragment"
+            android:id="@+id/action_prefsFragment_to_boardOneFragment"
+            app:destination="@id/boardOneFragment"
             app:popUpTo="@id/introFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_prefsFragment_to_boardTwoFragment"
+            app:destination="@id/boardTwoFragment"
+            app:popUpTo="@id/introFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_prefsFragment_to_boardThreeFragment"
+            app:destination="@id/boardThreeFragment"
+            app:popUpTo="@id/introFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_prefsFragment_to_boardFourFragment"
+            app:destination="@id/boardFourFragment"
+            app:popUpTo="@id/introFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/boardOneFragment"
+        android:name="dev.shreyansh.dice.ui.game.BoardOneFragment"
+        android:label="DICE" >
+        <action
+            android:id="@+id/action_boardOneFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/boardTwoFragment"
+        android:name="dev.shreyansh.dice.ui.game.BoardTwoFragment"
+        android:label="DICE" >
+        <action
+            android:id="@+id/action_boardTwoFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/boardThreeFragment"
+        android:name="dev.shreyansh.dice.ui.game.BoardThreeFragment"
+        android:label="DICE" >
+        <action
+            android:id="@+id/action_boardThreeFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/boardFourFragment"
+        android:name="dev.shreyansh.dice.ui.game.BoardFourFragment"
+        android:label="DICE" >
+        <action
+            android:id="@+id/action_boardFourFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
     </fragment>
 </navigation>

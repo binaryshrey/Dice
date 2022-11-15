@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="dev.shreyansh.dice.viewModel.DiceViewModel" />
+    </data>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -130,11 +136,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dimen_8"
+                        android:contentDescription="@string/dicetwo_imageview"
                         android:src="@drawable/two"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:contentDescription="@string/dicetwo_imageview" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/cardTwoTagline_textView"
@@ -193,11 +199,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dimen_8"
                         android:layout_marginEnd="@dimen/dimen_16"
+                        android:contentDescription="@string/dicethree_imageview"
                         android:src="@drawable/three"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:contentDescription="@string/dicethree_imageview" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/cardThreeTagline_textView"
@@ -256,11 +262,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dimen_8"
                         android:layout_marginEnd="@dimen/dimen_16"
+                        android:contentDescription="@string/dicefour_imageview"
                         android:src="@drawable/four"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:contentDescription="@string/dicefour_imageview" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/cardFourTagline_textView"
@@ -284,6 +290,7 @@
                 android:layout_marginEnd="@dimen/dimen_48"
                 android:layout_marginBottom="@dimen/dimen_24"
                 android:fontFamily="@font/montserrat"
+                android:onClick="@{() -> viewModel.onGameStart()}"
                 android:text="@string/play"
                 android:textColor="@color/black"
                 app:backgroundTint="@color/white"

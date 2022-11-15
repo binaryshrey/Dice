@@ -20,7 +20,12 @@ class MainActivity : AppCompatActivity() {
 
         val topLevelDestination = mutableSetOf<Int>()
         topLevelDestination.add(R.id.introFragment)
-        topLevelDestination.add(R.id.gameFragment)
+        topLevelDestination.add(R.id.prefsFragment)
+        topLevelDestination.add(R.id.boardOneFragment)
+        topLevelDestination.add(R.id.boardTwoFragment)
+        topLevelDestination.add(R.id.boardThreeFragment)
+        topLevelDestination.add(R.id.boardFourFragment)
+
         val appBarConfiguration : AppBarConfiguration = AppBarConfiguration.Builder(topLevelDestination).build()
 
         val navController = this.findNavController(R.id.nav_host_fragment_container)

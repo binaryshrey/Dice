@@ -7,14 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import dev.shreyansh.dice.R
 import dev.shreyansh.dice.databinding.FragmentPrefsBinding
+import dev.shreyansh.dice.viewModel.DiceViewModel
 
 
 class PrefsFragment : Fragment() {
 
     private lateinit var binding: FragmentPrefsBinding
+    private val viewModel : DiceViewModel by activityViewModels()
     private var dicePref : String = ""
 
     override fun onCreateView(
@@ -44,12 +49,21 @@ class PrefsFragment : Fragment() {
             binding.cardFour.isChecked = true
             dicePref = "four"
         }
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
 
-        binding.playButton.setOnClickListener {
-            if(dicePref.isEmpty())
-                Toast.makeText(context,"Select your board",Toast.LENGTH_SHORT).show()
-            else view?.findNavController()?.navigate(R.id.action_prefsFragment_to_gameFragment)
-        }
+        viewModel.eventGameStart.observe(viewLifecycleOwner, Observer { hasStarted ->
+            if(hasStarted){
+                when(dicePref){
+                    "one" -> findNavController().navigate(R.id.action_prefsFragment_to_boardOneFragment)
+                    "two" -> findNavController().navigate(R.id.action_prefsFragment_to_boardTwoFragment)
+                    "three" -> findNavController().navigate(R.id.action_prefsFragment_to_boardThreeFragment)
+                    "four" -> findNavController().navigate(R.id.action_prefsFragment_to_boardFourFragment)
+                }
+                viewModel.onGameStartComplete()
+            }
+        })
+
         return binding.root
     }
 
