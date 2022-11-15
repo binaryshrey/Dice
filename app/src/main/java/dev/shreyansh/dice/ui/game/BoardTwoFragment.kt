@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import dev.shreyansh.dice.R
 import dev.shreyansh.dice.databinding.FragmentBoardTwoBinding
 import dev.shreyansh.dice.viewModel.DiceViewModel
@@ -38,7 +39,7 @@ class BoardTwoFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.aboutFragment -> Toast.makeText(context,"Rate us", Toast.LENGTH_SHORT).show()
+            R.id.aboutFragment -> findNavController().navigate(R.id.action_boardTwoFragment_to_aboutFragment)
             R.id.settings -> Toast.makeText(context,"Settings", Toast.LENGTH_SHORT).show()
         }
         return super.onOptionsItemSelected(item)
