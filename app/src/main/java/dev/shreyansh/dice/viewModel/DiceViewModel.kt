@@ -68,6 +68,14 @@ class DiceViewModel(application: Application) : AndroidViewModel(application) {
         _result.value = ""
     }
 
+    fun resetData(){
+        _dice1.value = R.drawable.empty_dice
+        _dice2.value = R.drawable.empty_dice
+        _dice3.value = R.drawable.empty_dice
+        _dice4.value = R.drawable.empty_dice
+        _result.value = ""
+    }
+
     fun onGameStart(){
         _eventGameStart.value = true
         setIsGameModeSelectionComplete(true)

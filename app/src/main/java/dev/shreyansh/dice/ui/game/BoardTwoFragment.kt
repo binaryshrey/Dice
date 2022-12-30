@@ -8,9 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.preference.PreferenceManager
 import dev.shreyansh.dice.R
+import dev.shreyansh.dice.databinding.FragmentBoardOneBinding
 import dev.shreyansh.dice.databinding.FragmentBoardTwoBinding
 import dev.shreyansh.dice.viewModel.DiceViewModel
 
@@ -30,6 +32,12 @@ class BoardTwoFragment : Fragment() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
         setHasOptionsMenu(true)
+        viewModel.resetData()
+        viewModel.result.observe(viewLifecycleOwner, Observer { value ->
+            if (value != "") {
+                animateDice(binding)
+            }
+        })
 
         return binding.root
     }
@@ -62,6 +70,27 @@ class BoardTwoFragment : Fragment() {
             R.id.settings -> findNavController().navigate(R.id.action_boardTwoFragment_to_settingsFragment)
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun animateDice(binding: FragmentBoardTwoBinding) {
+        binding.dice1ImageView.animate().apply {
+            duration = 100
+            rotationYBy(360f)
+        }.withEndAction {
+            binding.dice1ImageView.animate().apply {
+                duration = 100
+                rotationYBy(3600f)
+            }
+        }
+        binding.dice2ImageView.animate().apply {
+            duration = 100
+            rotationYBy(360f)
+        }.withEndAction {
+            binding.dice1ImageView.animate().apply {
+                duration = 100
+                rotationYBy(3600f)
+            }
+        }
     }
 
 }
