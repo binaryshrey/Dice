@@ -1,28 +1,33 @@
-![Banner](https://raw.githubusercontent.com/binaryshrey/Dice/main/banner.webp)
+![Banner](https://raw.githubusercontent.com/binaryshrey/Dice/main/banner_dice.webp)
 
 # Dice 🎲
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/binaryShrey/Dice/Android%20Build)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/binaryshrey/dice/android_build.yml)
 ![License](https://img.shields.io/github/license/binaryshrey/dice)
 [![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)](https://ktlint.github.io/)
 
-Dice 🎲 is a simple, intuitive, minimalistic and ad-free dice-roll application📱 with which you can play your favourite board games, built to demonstrate use of modern android development tools
+Dice 🎲 is a minimalistic, intuitive and an ad-free dice-roll application📱 with which you can play your favourite board games, built to demonstrate use of modern android development tools
 
 Download the latest version :
 
-[![Dice App](https://img.shields.io/badge/DICE%20%F0%9F%8E%B2-APK-orange.svg?style=for-the-badge&logo=android)](https://github.com/binaryshrey/Dice/releases/download/v1.0.0/dice-release.apk)
+[![Dice App](https://img.shields.io/badge/DICE%20%F0%9F%8E%B2-APK-orange.svg?style=for-the-badge&logo=android)](https://github.com/binaryshrey/Dice/releases/download/v1.0.1/dice-release.apk)
 
 <br />
 
 ## Built With 🛠
-- [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.
+- [Kotlin](https://kotlinlang.org/) - Official programming language for Android development.
 - [Android Architecture Components](https://developer.android.com/topic/libraries/architecture) - Collection of libraries that help you design robust, testable, and maintainable apps.
-  - [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) - LiveData is an observable data holder class
-  - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - Stores UI-related data that isn't destroyed on UI changes. 
-  - [DataBinding](https://developer.android.com/topic/libraries/data-binding) - The Data Binding Library is a support library that allows you to bind UI components in your layouts to data sources in your app using a declarative format rather than programmatically.
-  - [Jetpack Navigation](https://developer.android.com/guide/navigation) - Navigation refers to the interactions that allow users to navigate across, into, and back out from the different pieces of content within your app
+  - [Flow](https://developer.android.com/kotlin/flow) : In coroutines, a flow is a type that can emit multiple values sequentially, as opposed to suspend functions that return only a single value.
+  - [Coroutines](https://kotlinlang.org/docs/coroutines-overview.html) : A coroutine is an instance of suspendable computation
+  - [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) : LiveData is an observable data holder class
+  - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) : Stores UI-related data that isn't destroyed on UI changes. 
+  - [DataBinding](https://developer.android.com/topic/libraries/data-binding) : The Data Binding Library is a support library that allows you to bind UI components in your layouts to data sources in your app using a declarative format rather than programmatically.
+  - [DataStore](https://developer.android.com/topic/libraries/architecture/datastore) : Jetpack DataStore is a data storage solution that allows you to store key-value pairs or typed objects with protocol buffers.
+  - [Jetpack Navigation](https://developer.android.com/guide/navigation) : Navigation refers to the interactions that allow users to navigate across, into, and back out from the different pieces of content within your app
+  - [Jetpack Preference Setting](https://developer.android.com/develop/ui/views/components/settings) : Settings allow users to change the functionality and behavior of an application.
+  - [Splash Screen API](https://developer.android.com/develop/ui/views/launch/splash-screen) : Splash Screen is usually the first screen visible to the user when the application is launched.
   
-- [Material Components for Android](https://github.com/material-components/material-components-android) - Modular and customizable Material Design UI components for Android.
-- [Figma](https://figma.com/) - Figma is a vector graphics editor and prototyping tool which is primarily web-based.
+- [Material Components for Android](https://github.com/material-components/material-components-android) : Modular and customizable Material Design UI components for Android.
+- [Figma](https://figma.com/) : Figma is a vector graphics editor and prototyping tool which is primarily web-based.
 
 <br />
 
