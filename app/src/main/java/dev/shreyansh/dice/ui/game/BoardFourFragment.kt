@@ -39,7 +39,7 @@ class BoardFourFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.aboutFragment -> findNavController().navigate(R.id.action_boardFourFragment_to_aboutFragment)
-            R.id.settings -> Toast.makeText(context,"Settings", Toast.LENGTH_SHORT).show()
+            R.id.settings -> findNavController().navigate(R.id.action_boardFourFragment_to_settingsFragment)
         }
         return super.onOptionsItemSelected(item)
     }
