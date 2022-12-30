@@ -6,6 +6,7 @@ import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -40,6 +41,12 @@ class BoardOneFragment : Fragment() {
             "two" -> findNavController().navigate(R.id.action_boardOneFragment_to_boardTwoFragment)
             "three" -> findNavController().navigate(R.id.action_boardOneFragment_to_boardThreeFragment)
             "four" -> findNavController().navigate(R.id.action_boardOneFragment_to_boardFourFragment)
+
+        }
+        when(sp.getString("THEME_KEY","")){
+            "Light Mode" -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            "Dark Mode" -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            "System Default" -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
 
         }
     }

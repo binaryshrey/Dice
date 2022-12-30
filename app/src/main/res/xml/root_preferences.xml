@@ -7,7 +7,7 @@
             android:defaultValue="System Default"
             android:entries="@array/theme_entries"
             android:entryValues="@array/theme_values"
-            android:key="theme"
+            android:key="THEME_KEY"
             android:title="@string/theme"
             app:useSimpleSummaryProvider="true" />
 

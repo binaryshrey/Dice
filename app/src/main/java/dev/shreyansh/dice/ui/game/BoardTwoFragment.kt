@@ -43,6 +43,12 @@ class BoardTwoFragment : Fragment() {
             "four" -> findNavController().navigate(R.id.action_boardTwoFragment_to_boardFourFragment)
 
         }
+        when(sp.getString("THEME_KEY","")){
+            "Light Mode" -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            "Dark Mode" -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            "System Default" -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
