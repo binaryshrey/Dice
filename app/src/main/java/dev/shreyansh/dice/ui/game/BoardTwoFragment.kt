@@ -5,9 +5,11 @@ import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import androidx.preference.PreferenceManager
 import dev.shreyansh.dice.R
 import dev.shreyansh.dice.databinding.FragmentBoardTwoBinding
 import dev.shreyansh.dice.viewModel.DiceViewModel
@@ -30,6 +32,17 @@ class BoardTwoFragment : Fragment() {
         setHasOptionsMenu(true)
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val sp = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        when(sp.getString("GAME_MODE_KEY","")){
+            "one" -> findNavController().navigate(R.id.action_boardTwoFragment_to_boardOneFragment)
+            "three" -> findNavController().navigate(R.id.action_boardTwoFragment_to_boardThreeFragment)
+            "four" -> findNavController().navigate(R.id.action_boardTwoFragment_to_boardFourFragment)
+
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

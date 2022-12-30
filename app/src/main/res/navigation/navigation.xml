@@ -73,6 +73,21 @@
         <action
             android:id="@+id/action_boardOneFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_boardOneFragment_to_boardTwoFragment"
+            app:destination="@id/boardTwoFragment"
+            app:popUpTo="@id/boardOneFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_boardOneFragment_to_boardThreeFragment"
+            app:destination="@id/boardThreeFragment"
+            app:popUpTo="@id/boardOneFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_boardOneFragment_to_boardFourFragment"
+            app:destination="@id/boardFourFragment"
+            app:popUpTo="@id/boardOneFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/boardTwoFragment"
@@ -84,6 +99,21 @@
         <action
             android:id="@+id/action_boardTwoFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_boardTwoFragment_to_boardFourFragment"
+            app:destination="@id/boardFourFragment"
+            app:popUpTo="@id/boardTwoFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_boardTwoFragment_to_boardThreeFragment"
+            app:destination="@id/boardThreeFragment"
+            app:popUpTo="@id/boardTwoFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_boardTwoFragment_to_boardOneFragment"
+            app:destination="@id/boardOneFragment"
+            app:popUpTo="@id/boardTwoFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/boardThreeFragment"
@@ -95,6 +125,21 @@
         <action
             android:id="@+id/action_boardThreeFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_boardThreeFragment_to_boardFourFragment"
+            app:destination="@id/boardFourFragment"
+            app:popUpTo="@id/boardThreeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_boardThreeFragment_to_boardTwoFragment"
+            app:destination="@id/boardTwoFragment"
+            app:popUpTo="@id/boardThreeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_boardThreeFragment_to_boardOneFragment"
+            app:destination="@id/boardOneFragment"
+            app:popUpTo="@id/boardThreeFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/boardFourFragment"
@@ -106,6 +151,21 @@
         <action
             android:id="@+id/action_boardFourFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_boardFourFragment_to_boardThreeFragment"
+            app:destination="@id/boardThreeFragment"
+            app:popUpTo="@id/boardFourFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_boardFourFragment_to_boardTwoFragment"
+            app:destination="@id/boardTwoFragment"
+            app:popUpTo="@id/boardFourFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_boardFourFragment_to_boardOneFragment"
+            app:destination="@id/boardOneFragment"
+            app:popUpTo="@id/boardFourFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"

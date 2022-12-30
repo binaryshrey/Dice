@@ -1,5 +1,6 @@
 package dev.shreyansh.dice.ui.game
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
@@ -8,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import androidx.preference.PreferenceManager
 import dev.shreyansh.dice.R
 import dev.shreyansh.dice.databinding.FragmentBoardOneBinding
 import dev.shreyansh.dice.viewModel.DiceViewModel
@@ -30,6 +32,16 @@ class BoardOneFragment : Fragment() {
         setHasOptionsMenu(true)
 
         return binding.root
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val sp = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        when(sp.getString("GAME_MODE_KEY","")){
+            "two" -> findNavController().navigate(R.id.action_boardOneFragment_to_boardTwoFragment)
+            "three" -> findNavController().navigate(R.id.action_boardOneFragment_to_boardThreeFragment)
+            "four" -> findNavController().navigate(R.id.action_boardOneFragment_to_boardFourFragment)
+
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

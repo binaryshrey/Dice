@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import androidx.preference.PreferenceManager
 import dev.shreyansh.dice.R
 import dev.shreyansh.dice.databinding.FragmentBoardThreeBinding
 import dev.shreyansh.dice.viewModel.DiceViewModel
@@ -30,6 +31,17 @@ class BoardThreeFragment : Fragment() {
         setHasOptionsMenu(true)
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val sp = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        when(sp.getString("GAME_MODE_KEY","")){
+            "one" -> findNavController().navigate(R.id.action_boardThreeFragment_to_boardOneFragment)
+            "two" -> findNavController().navigate(R.id.action_boardThreeFragment_to_boardTwoFragment)
+            "four" -> findNavController().navigate(R.id.action_boardThreeFragment_to_boardFourFragment)
+
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
