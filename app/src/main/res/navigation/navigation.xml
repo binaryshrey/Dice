@@ -81,6 +81,9 @@
         <action
             android:id="@+id/action_boardTwoFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_boardTwoFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/boardThreeFragment"
@@ -89,6 +92,9 @@
         <action
             android:id="@+id/action_boardThreeFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_boardThreeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/boardFourFragment"
@@ -97,6 +103,9 @@
         <action
             android:id="@+id/action_boardFourFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_boardFourFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
