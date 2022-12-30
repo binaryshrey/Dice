@@ -17,6 +17,26 @@
         <action
             android:id="@+id/action_introFragment_to_prefsFragment"
             app:destination="@id/prefsFragment" />
+        <action
+            android:id="@+id/action_introFragment_to_boardFourFragment"
+            app:destination="@id/boardFourFragment"
+            app:popUpTo="@id/introFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_introFragment_to_boardThreeFragment"
+            app:destination="@id/boardThreeFragment"
+            app:popUpTo="@id/introFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_introFragment_to_boardTwoFragment"
+            app:destination="@id/boardTwoFragment"
+            app:popUpTo="@id/introFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_introFragment_to_boardOneFragment"
+            app:destination="@id/boardOneFragment"
+            app:popUpTo="@id/introFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/prefsFragment"

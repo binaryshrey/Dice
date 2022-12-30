@@ -5,14 +5,29 @@ import android.content.Context
 import android.os.Build
 import android.os.VibrationEffect
 import android.os.Vibrator
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.*
 import dev.shreyansh.dice.R
+import dev.shreyansh.dice.dataStore.DataStoreManager
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import timber.log.Timber
 import kotlin.random.Random
 
 class DiceViewModel(application: Application) : AndroidViewModel(application) {
+
+    private val dataStore = DataStoreManager(application)
+    var readGameMode = dataStore.getGameMode().asLiveData()
+    var getIsGameModeSelectionComplete = dataStore.getIsGameModeSelectionComplete().asLiveData()
+    fun setGameMode(mode : String){
+        viewModelScope.launch(Dispatchers.IO) {
+            dataStore.setGameMode(mode)
+        }
+    }
+    private fun setIsGameModeSelectionComplete(complete : Boolean){
+        viewModelScope.launch(Dispatchers.IO) {
+            dataStore.setIsGameModeSelectionComplete(complete)
+        }
+    }
 
     private val _eventGameStart = MutableLiveData<Boolean>()
     val eventGameStart : LiveData<Boolean>
@@ -55,6 +70,7 @@ class DiceViewModel(application: Application) : AndroidViewModel(application) {
 
     fun onGameStart(){
         _eventGameStart.value = true
+        setIsGameModeSelectionComplete(true)
     }
 
     fun onGameStartComplete(){
@@ -69,14 +85,6 @@ class DiceViewModel(application: Application) : AndroidViewModel(application) {
         _eventGameIntro.value = false
     }
 
-    fun roll() {
-        provideHapticFeedback()
-        val randomIntOne : Int = Random.nextInt(6) + 1
-        val randomIntTwo : Int = Random.nextInt(6) + 1
-        _dice1.value = setImage(randomIntOne)
-        _dice2.value = setImage(randomIntTwo)
-        _result.value = "You Rolled : ${(randomIntOne+randomIntTwo).toString()}"
-    }
 
     private fun provideHapticFeedback(){
         val vibrator = getApplication<Application>().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator

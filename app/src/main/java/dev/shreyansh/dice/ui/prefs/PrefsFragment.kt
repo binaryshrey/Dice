@@ -1,6 +1,7 @@
 package dev.shreyansh.dice.ui.prefs
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,7 @@ import androidx.navigation.fragment.findNavController
 import dev.shreyansh.dice.R
 import dev.shreyansh.dice.databinding.FragmentPrefsBinding
 import dev.shreyansh.dice.viewModel.DiceViewModel
+import timber.log.Timber
 
 
 class PrefsFragment : Fragment() {
@@ -33,21 +35,25 @@ class PrefsFragment : Fragment() {
             uncheckCards()
             binding.cardOne.isChecked = true
             dicePref = "one"
+            viewModel.setGameMode(dicePref)
         }
         binding.cardTwo.setOnClickListener {
             uncheckCards()
             binding.cardTwo.isChecked = true
             dicePref = "two"
+            viewModel.setGameMode(dicePref)
         }
         binding.cardThree.setOnClickListener {
             uncheckCards()
             binding.cardThree.isChecked = true
             dicePref = "three"
+            viewModel.setGameMode(dicePref)
         }
         binding.cardFour.setOnClickListener {
             uncheckCards()
             binding.cardFour.isChecked = true
             dicePref = "four"
+            viewModel.setGameMode(dicePref)
         }
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
