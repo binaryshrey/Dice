@@ -44,6 +44,16 @@ class BoardTwoFragment : Fragment() {
                 animateDice(binding)
             }
         })
+        binding.rollButton.setOnClickListener {
+            binding.rollButton.isEnabled=false
+            binding.rollButton.isClickable=false
+            viewModel.rollBoardFour()
+            binding.rollButton.postDelayed(Runnable {
+                binding.rollButton.isEnabled=true
+                binding.rollButton.isClickable=true
+            } , 210)
+
+        }
 
         return binding.root
     }

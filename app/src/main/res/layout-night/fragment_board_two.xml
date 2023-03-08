@@ -66,7 +66,6 @@
             android:layout_marginEnd="@dimen/dimen_56"
             android:layout_marginBottom="@dimen/dimen_24"
             android:text="@string/roll"
-            android:onClick="@{() -> viewModel.rollBoardTwo()}"
             android:textColor="@color/black"
             app:backgroundTint="@color/white"
             app:cornerRadius="@dimen/dimen_32"

@@ -89,7 +89,6 @@
             android:layout_marginStart="@dimen/dimen_56"
             android:layout_marginEnd="@dimen/dimen_56"
             android:layout_marginBottom="@dimen/dimen_24"
-            android:onClick="@{() -> viewModel.rollBoardFour()}"
             android:text="@string/roll"
             android:textColor="@color/black"
             app:backgroundTint="@color/white"
