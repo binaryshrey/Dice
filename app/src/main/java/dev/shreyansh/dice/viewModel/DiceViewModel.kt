@@ -21,7 +21,7 @@ class DiceViewModel(application: Application) : AndroidViewModel(application) {
     val issuesURI : String = "https://github.com/binaryshrey/Dice/issues"
 
     private val diceDataStore = DiceDataStore.getInstance(application)
-    //var appTheme = diceDataStore.getAppTheme().asLiveData()
+    var appTheme = diceDataStore.getAppTheme().asLiveData()
     var gameMode = diceDataStore.getGameMode().asLiveData()
 
     private val _eventGameStart = MutableLiveData<Boolean>()
@@ -67,6 +67,12 @@ class DiceViewModel(application: Application) : AndroidViewModel(application) {
     fun setGameMode(mode: String){
         viewModelScope.launch(Dispatchers.IO) {
             diceDataStore.setGameMode(mode)
+        }
+    }
+
+    fun setAppTheme(theme: String){
+        viewModelScope.launch(Dispatchers.IO) {
+            diceDataStore.setAppTheme(theme)
         }
     }
 

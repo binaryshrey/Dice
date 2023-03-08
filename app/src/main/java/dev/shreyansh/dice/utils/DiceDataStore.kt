@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.map
 import java.io.IOException
 
 object PREFS{
-   // val THEME_KEY = stringPreferencesKey("THEME_KEY")
+    val THEME_KEY = stringPreferencesKey("THEME_KEY")
     val GAME_MODE = stringPreferencesKey("GAME_MODE")
     //val IS_ONBOARD_FLOW_COMPLETE = booleanPreferencesKey("IS_ONBOARD_FLOW_COMPLETE")
 }
@@ -40,23 +40,23 @@ class DiceDataStore private constructor(context: Context) {
 
 
     //theme prefs
-//    suspend fun setAppTheme(theme: String) {
-//        dataStore.edit { pref ->
-//            pref[PREFS.THEME_KEY] = theme
-//        }
-//    }
-//    fun getAppTheme(): Flow<String> = dataStore.data
-//        .catch { exception ->
-//            if (exception is IOException) {
-//                emit(emptyPreferences())
-//            } else {
-//                throw exception
-//            }
-//        }
-//        .map { pref ->
-//            val theme = pref[PREFS.THEME_KEY] ?: "System Default"
-//            theme
-//        }
+    suspend fun setAppTheme(theme: String) {
+        dataStore.edit { pref ->
+            pref[PREFS.THEME_KEY] = theme
+        }
+    }
+    fun getAppTheme(): Flow<String> = dataStore.data
+        .catch { exception ->
+            if (exception is IOException) {
+                emit(emptyPreferences())
+            } else {
+                throw exception
+            }
+        }
+        .map { pref ->
+            val theme = pref[PREFS.THEME_KEY] ?: "System Default"
+            theme
+        }
 
     //game prefs
     suspend fun setGameMode(mode: String) {
