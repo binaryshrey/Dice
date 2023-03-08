@@ -24,42 +24,37 @@ class PrefsFragment : Fragment() {
     private val viewModel : DiceViewModel by activityViewModels()
     private var dicePref : String = ""
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         // Inflate the layout for this fragment
+
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_prefs, container, false)
 
         binding.cardOne.setOnClickListener {
             uncheckCards()
             binding.cardOne.isChecked = true
             dicePref = "one"
-            viewModel.setGameMode(dicePref)
         }
         binding.cardTwo.setOnClickListener {
             uncheckCards()
             binding.cardTwo.isChecked = true
             dicePref = "two"
-            viewModel.setGameMode(dicePref)
         }
         binding.cardThree.setOnClickListener {
             uncheckCards()
             binding.cardThree.isChecked = true
             dicePref = "three"
-            viewModel.setGameMode(dicePref)
         }
         binding.cardFour.setOnClickListener {
             uncheckCards()
             binding.cardFour.isChecked = true
             dicePref = "four"
-            viewModel.setGameMode(dicePref)
         }
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
         viewModel.eventGameStart.observe(viewLifecycleOwner, Observer { hasStarted ->
             if(hasStarted){
+                viewModel.setGameMode(dicePref)
                 when(dicePref){
                     "one" -> findNavController().navigate(R.id.action_prefsFragment_to_boardOneFragment)
                     "two" -> findNavController().navigate(R.id.action_prefsFragment_to_boardTwoFragment)

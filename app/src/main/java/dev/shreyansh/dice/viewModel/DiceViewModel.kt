@@ -8,6 +8,7 @@ import android.os.Vibrator
 import androidx.lifecycle.*
 import dev.shreyansh.dice.R
 import dev.shreyansh.dice.dataStore.DataStoreManager
+import dev.shreyansh.dice.utils.DiceDataStore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -15,27 +16,17 @@ import kotlin.random.Random
 
 class DiceViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val dataStore = DataStoreManager(application)
-    var readGameMode = dataStore.getGameMode().asLiveData()
-    var getIsGameModeSelectionComplete = dataStore.getIsGameModeSelectionComplete().asLiveData()
-    fun setGameMode(mode : String){
-        viewModelScope.launch(Dispatchers.IO) {
-            dataStore.setGameMode(mode)
-        }
-    }
-    private fun setIsGameModeSelectionComplete(complete : Boolean){
-        viewModelScope.launch(Dispatchers.IO) {
-            dataStore.setIsGameModeSelectionComplete(complete)
-        }
-    }
+    val developerURI : String = "https://github.com/binaryshrey"
+    val appURI : String = "https://github.com/binaryshrey/Dice"
+    val issuesURI : String = "https://github.com/binaryshrey/Dice/issues"
+
+    private val diceDataStore = DiceDataStore.getInstance(application)
+    var appTheme = diceDataStore.getAppTheme().asLiveData()
+    var gameMode = diceDataStore.getGameMode().asLiveData()
 
     private val _eventGameStart = MutableLiveData<Boolean>()
     val eventGameStart : LiveData<Boolean>
         get() = _eventGameStart
-
-    private val _eventGameIntro = MutableLiveData<Boolean>()
-    val eventGameIntro : LiveData<Boolean>
-        get() = _eventGameIntro
 
     private val _dice1 = MutableLiveData<Int>()
     val dice1 : LiveData<Int>
@@ -57,16 +48,47 @@ class DiceViewModel(application: Application) : AndroidViewModel(application) {
     val result : LiveData<String>
         get() = _result
 
+    private val _loginComplete = MutableLiveData<Boolean>()
+    val loginComplete: LiveData<Boolean>
+        get() = _loginComplete
+
+
+
     init {
         Timber.i("DiceViewModel created")
         _eventGameStart.value = false
-        _eventGameIntro.value = false
         _dice1.value = R.drawable.empty_dice
         _dice2.value = R.drawable.empty_dice
         _dice3.value = R.drawable.empty_dice
         _dice4.value = R.drawable.empty_dice
         _result.value = ""
     }
+
+    fun setGameMode(mode: String){
+        viewModelScope.launch(Dispatchers.IO) {
+            diceDataStore.setGameMode(mode)
+        }
+    }
+
+    fun setAppTheme(theme: String){
+        viewModelScope.launch(Dispatchers.IO) {
+            diceDataStore.setAppTheme(theme)
+        }
+    }
+
+
+    fun updateLogin() {
+        _loginComplete.value = true
+    }
+
+    fun onLoginComplete() {
+        _loginComplete.value = false
+    }
+
+    fun onLoginCancel() {
+        _loginComplete.value = false
+    }
+
 
     fun resetData(){
         _dice1.value = R.drawable.empty_dice
@@ -78,19 +100,10 @@ class DiceViewModel(application: Application) : AndroidViewModel(application) {
 
     fun onGameStart(){
         _eventGameStart.value = true
-        setIsGameModeSelectionComplete(true)
     }
 
     fun onGameStartComplete(){
         _eventGameStart.value = false
-    }
-
-    fun onGameIntro(){
-        _eventGameIntro.value = true
-    }
-
-    fun onGameIntroComplete(){
-        _eventGameIntro.value = false
     }
 
 

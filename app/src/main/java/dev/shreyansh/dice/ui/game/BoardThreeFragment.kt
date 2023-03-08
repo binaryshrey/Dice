@@ -1,16 +1,21 @@
 package dev.shreyansh.dice.ui.game
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.preference.PreferenceManager
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.firebase.auth.FirebaseAuth
 import dev.shreyansh.dice.R
 import dev.shreyansh.dice.databinding.FragmentBoardThreeBinding
 import dev.shreyansh.dice.databinding.FragmentBoardTwoBinding
@@ -28,6 +33,7 @@ class BoardThreeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         (activity as AppCompatActivity).supportActionBar?.show()
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.black)
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_board_three, container, false)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
@@ -39,6 +45,16 @@ class BoardThreeFragment : Fragment() {
                 animateDice(binding)
             }
         })
+        binding.rollButton.setOnClickListener {
+            binding.rollButton.isEnabled=false
+            binding.rollButton.isClickable=false
+            viewModel.rollBoardFour()
+            binding.rollButton.postDelayed(Runnable {
+                binding.rollButton.isEnabled=true
+                binding.rollButton.isClickable=true
+            } , 210)
+
+        }
 
         return binding.root
     }
@@ -69,8 +85,22 @@ class BoardThreeFragment : Fragment() {
         when (item.itemId) {
             R.id.aboutFragment -> findNavController().navigate(R.id.action_boardThreeFragment_to_aboutFragment)
             R.id.settings -> findNavController().navigate(R.id.action_boardThreeFragment_to_settingsFragment)
+            R.id.logout -> signOutFlow()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun signOutFlow() {
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+
+        val googlesSignInClient = GoogleSignIn.getClient(requireContext(),gso)
+        googlesSignInClient.signOut()
+        FirebaseAuth.getInstance().signOut()
+        findNavController().navigate(R.id.action_boardThreeFragment_to_introFragment)
+        Log.d("BottomSheet", "Log Out successful!")
     }
 
     private fun animateDice(binding: FragmentBoardThreeBinding) {

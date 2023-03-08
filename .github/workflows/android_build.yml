@@ -16,6 +16,14 @@ jobs :
         with:
           java-version : 11
 
+      - name: Decode google-services.json
+        env:
+          FIREBASE_GOOGLE_SERVICE: ${{ secrets.FIREBASE_GOOGLE_SERVICE }}
+        run: echo $FIREBASE_GOOGLE_SERVICE > app/google-services.json
+
+      - name: Change wrapper permissions
+        run: chmod +x ./gradlew
+
       - name: Build Project
         run : ./gradlew assemble
 
