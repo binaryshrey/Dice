@@ -11,7 +11,6 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="#d8d8d8"
         android:id="@+id/gameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -76,6 +75,7 @@
             android:layout_marginBottom="@dimen/dimen_16"
             android:text="@{viewModel.result}"
             android:textSize="24sp"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/roll_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -85,14 +85,14 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/roll_button"
             android:layout_width="@dimen/dimen_0"
-            android:layout_height="@dimen/dimen_64"
+            android:layout_height="56dp"
             android:layout_marginStart="@dimen/dimen_56"
             android:layout_marginEnd="@dimen/dimen_56"
             android:layout_marginBottom="@dimen/dimen_24"
             android:onClick="@{() -> viewModel.rollBoardFour()}"
             android:text="@string/roll"
-            android:textColor="@color/white"
-            app:backgroundTint="@color/dark_grey"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/white"
             app:cornerRadius="@dimen/dimen_32"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

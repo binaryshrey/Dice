@@ -4,30 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
             type="dev.shreyansh.dice.viewModel.DiceViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="#d8d8d8"
-        android:id="@+id/gameLayout"
+        android:id="@+id/boardOneLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.game.BoardThreeFragment">
-
-        <ImageView
-            android:id="@+id/dice0_imageView"
-            android:layout_width="@dimen/dimen_200"
-            android:layout_height="@dimen/dimen_200"
-            android:layout_marginTop="@dimen/dimen_128"
-            android:contentDescription="@string/dice3"
-            app:imageResource="@{viewModel.dice1}"
-            app:layout_constraintBottom_toTopOf="@+id/dice1_imageView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        tools:context=".ui.game.BoardOneFragment">
 
         <ImageView
             android:id="@+id/dice1_imageView"
@@ -35,25 +21,12 @@
             android:layout_height="@dimen/dimen_200"
             android:layout_marginBottom="@dimen/dimen_16"
             android:contentDescription="@string/dice1"
-            app:imageResource="@{viewModel.dice2}"
-            app:layout_constraintBottom_toTopOf="@+id/roll_button"
-            app:layout_constraintEnd_toStartOf="@+id/dice2_imageView"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/dice2_imageView"
-            android:layout_width="@dimen/dimen_200"
-            android:layout_height="@dimen/dimen_200"
-            android:layout_marginBottom="@dimen/dimen_16"
-            android:contentDescription="@string/dice2"
-            app:imageResource="@{viewModel.dice3}"
+            app:imageResource="@{viewModel.dice1}"
             app:layout_constraintBottom_toTopOf="@+id/roll_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/dice1_imageView"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -63,8 +36,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_16"
             android:layout_marginBottom="@dimen/dimen_16"
-            android:text="@{viewModel.result}"
             android:textSize="24sp"
+            android:text="@{viewModel.result}"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/roll_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -74,19 +48,18 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/roll_button"
             android:layout_width="@dimen/dimen_0"
-            android:layout_height="@dimen/dimen_64"
+            android:layout_height="56dp"
             android:layout_marginStart="@dimen/dimen_56"
             android:layout_marginEnd="@dimen/dimen_56"
             android:layout_marginBottom="@dimen/dimen_24"
-            android:onClick="@{() -> viewModel.rollBoardThree()}"
             android:text="@string/roll"
-            android:textColor="@color/white"
-            app:backgroundTint="@color/dark_grey"
+            android:onClick="@{() -> viewModel.rollBoardOne()}"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/white"
             app:cornerRadius="@dimen/dimen_32"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

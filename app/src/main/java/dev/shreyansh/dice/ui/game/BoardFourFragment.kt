@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -22,12 +23,10 @@ class BoardFourFragment : Fragment() {
     private lateinit var binding : FragmentBoardFourBinding
     private val viewModel: DiceViewModel by activityViewModels()
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         (activity as AppCompatActivity).supportActionBar?.show()
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.black)
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_board_four, container, false)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
