@@ -60,7 +60,7 @@
             android:layout_marginBottom="@dimen/dimen_24"
             android:drawableLeft="@drawable/ic_google"
             android:fontFamily="@font/montserrat"
-            android:onClick="@{() -> viewModel.onGameIntro()}"
+            android:onClick="@{() -> viewModel.updateLogin()}"
             android:text="LOGIN   "
             android:textSize="16sp"
             android:textColor="@color/black"
@@ -71,6 +71,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <ProgressBar
+            android:visibility="gone"
             android:id="@+id/loadingTicketProgress"
             style="?android:attr/progressBarStyle"
             android:layout_width="20dp"

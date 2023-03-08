@@ -285,7 +285,7 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/play_button"
                 android:layout_width="@dimen/dimen_0"
-                android:layout_height="@dimen/dimen_64"
+                android:layout_height="56dp"
                 android:layout_marginStart="@dimen/dimen_48"
                 android:layout_marginEnd="@dimen/dimen_48"
                 android:layout_marginBottom="@dimen/dimen_24"
