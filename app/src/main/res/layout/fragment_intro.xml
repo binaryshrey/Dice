@@ -31,14 +31,13 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.770" />
+            app:layout_constraintVertical_bias="0.700" />
 
         <TextView
             android:id="@+id/tagline_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dimen_48"
-            android:layout_marginTop="@dimen/dimen_16"
             android:layout_marginBottom="@dimen/dimen_16"
             android:fontFamily="@font/montserrat"
             android:includeFontPadding="true"
@@ -55,13 +54,15 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/next_button"
             android:layout_width="@dimen/dimen_0"
-            android:layout_height="@dimen/dimen_64"
+            android:layout_height="56dp"
             android:layout_marginStart="@dimen/dimen_48"
             android:layout_marginEnd="@dimen/dimen_48"
             android:layout_marginBottom="@dimen/dimen_24"
+            android:drawableLeft="@drawable/ic_google"
             android:fontFamily="@font/montserrat"
             android:onClick="@{() -> viewModel.onGameIntro()}"
-            android:text="@string/get_started"
+            android:text="LOGIN   "
+            android:textSize="16sp"
             android:textColor="@color/black"
             app:backgroundTint="@color/white"
             app:cornerRadius="@dimen/dimen_32"
@@ -69,12 +70,25 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <ProgressBar
+            android:id="@+id/loadingTicketProgress"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="42dp"
+            android:elevation="4dp"
+            android:indeterminateTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.700"
+            app:layout_constraintStart_toStartOf="parent" />
+
         <ImageView
-            android:contentDescription="@string/banner"
             android:id="@+id/imageView"
             android:layout_width="0dp"
-            android:layout_height="500dp"
+            android:layout_height="480dp"
             android:adjustViewBounds="true"
+            android:contentDescription="@string/banner"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
