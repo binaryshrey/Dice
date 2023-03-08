@@ -1,6 +1,7 @@
 package dev.shreyansh.dice.ui.game
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -12,6 +13,9 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.preference.PreferenceManager
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.firebase.auth.FirebaseAuth
 import dev.shreyansh.dice.R
 import dev.shreyansh.dice.databinding.FragmentBoardOneBinding
 import dev.shreyansh.dice.databinding.FragmentBoardTwoBinding
@@ -70,8 +74,22 @@ class BoardTwoFragment : Fragment() {
         when (item.itemId) {
             R.id.aboutFragment -> findNavController().navigate(R.id.action_boardTwoFragment_to_aboutFragment)
             R.id.settings -> findNavController().navigate(R.id.action_boardTwoFragment_to_settingsFragment)
+            R.id.logout -> signOutFlow()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun signOutFlow() {
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+
+        val googlesSignInClient = GoogleSignIn.getClient(requireContext(),gso)
+        googlesSignInClient.signOut()
+        FirebaseAuth.getInstance().signOut()
+        findNavController().navigate(R.id.action_boardTwoFragment_to_introFragment)
+        Log.d("BottomSheet", "Log Out successful!")
     }
 
     private fun animateDice(binding: FragmentBoardTwoBinding) {

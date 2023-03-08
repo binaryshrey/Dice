@@ -16,25 +16,35 @@
         android:label="IntroFragment" >
         <action
             android:id="@+id/action_introFragment_to_prefsFragment"
-            app:destination="@id/prefsFragment" />
+            app:destination="@id/prefsFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_introFragment_to_boardFourFragment"
             app:destination="@id/boardFourFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/introFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_introFragment_to_boardThreeFragment"
             app:destination="@id/boardThreeFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/introFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_introFragment_to_boardTwoFragment"
             app:destination="@id/boardTwoFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/introFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_introFragment_to_boardOneFragment"
             app:destination="@id/boardOneFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/introFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -45,21 +55,29 @@
         <action
             android:id="@+id/action_prefsFragment_to_boardOneFragment"
             app:destination="@id/boardOneFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/introFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_prefsFragment_to_boardTwoFragment"
             app:destination="@id/boardTwoFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/introFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_prefsFragment_to_boardThreeFragment"
             app:destination="@id/boardThreeFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/introFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_prefsFragment_to_boardFourFragment"
             app:destination="@id/boardFourFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/introFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -69,23 +87,40 @@
         android:label="DICE" >
         <action
             android:id="@+id/action_boardOneFragment_to_aboutFragment"
-            app:destination="@id/aboutFragment" />
+            app:destination="@id/aboutFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_boardOneFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_boardOneFragment_to_boardTwoFragment"
             app:destination="@id/boardTwoFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/boardOneFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_boardOneFragment_to_boardThreeFragment"
             app:destination="@id/boardThreeFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/boardOneFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_boardOneFragment_to_boardFourFragment"
             app:destination="@id/boardFourFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/boardOneFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_boardOneFragment_to_introFragment"
+            app:destination="@id/introFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/boardOneFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -95,23 +130,40 @@
         android:label="DICE" >
         <action
             android:id="@+id/action_boardTwoFragment_to_aboutFragment"
-            app:destination="@id/aboutFragment" />
+            app:destination="@id/aboutFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_boardTwoFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_boardTwoFragment_to_boardFourFragment"
             app:destination="@id/boardFourFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/boardTwoFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_boardTwoFragment_to_boardThreeFragment"
             app:destination="@id/boardThreeFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/boardTwoFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_boardTwoFragment_to_boardOneFragment"
             app:destination="@id/boardOneFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/boardTwoFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_boardTwoFragment_to_introFragment"
+            app:destination="@id/introFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/boardTwoFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -121,23 +173,40 @@
         android:label="DICE" >
         <action
             android:id="@+id/action_boardThreeFragment_to_aboutFragment"
-            app:destination="@id/aboutFragment" />
+            app:destination="@id/aboutFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_boardThreeFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_boardThreeFragment_to_boardFourFragment"
             app:destination="@id/boardFourFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/boardThreeFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_boardThreeFragment_to_boardTwoFragment"
             app:destination="@id/boardTwoFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/boardThreeFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_boardThreeFragment_to_boardOneFragment"
             app:destination="@id/boardOneFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/boardThreeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_boardThreeFragment_to_introFragment"
+            app:destination="@id/introFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/boardThreeFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -147,23 +216,40 @@
         android:label="DICE" >
         <action
             android:id="@+id/action_boardFourFragment_to_aboutFragment"
-            app:destination="@id/aboutFragment" />
+            app:destination="@id/aboutFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_boardFourFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_boardFourFragment_to_boardThreeFragment"
             app:destination="@id/boardThreeFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/boardFourFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_boardFourFragment_to_boardTwoFragment"
             app:destination="@id/boardTwoFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/boardFourFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_boardFourFragment_to_boardOneFragment"
             app:destination="@id/boardOneFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/boardFourFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_boardFourFragment_to_introFragment"
+            app:destination="@id/introFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/boardFourFragment"
             app:popUpToInclusive="true" />
     </fragment>
