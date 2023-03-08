@@ -16,6 +16,10 @@ import kotlin.random.Random
 
 class DiceViewModel(application: Application) : AndroidViewModel(application) {
 
+    val developerURI : String = "https://github.com/binaryshrey"
+    val appURI : String = "https://github.com/binaryshrey/Dice"
+    val issuesURI : String = "https://github.com/binaryshrey/Dice/issues"
+
     private val diceDataStore = DiceDataStore.getInstance(application)
     //var appTheme = diceDataStore.getAppTheme().asLiveData()
     var gameMode = diceDataStore.getGameMode().asLiveData()

@@ -51,7 +51,7 @@
             android:layout_marginTop="@dimen/dimen_16"
             android:layout_marginBottom="@dimen/dimen_16"
             android:textSize="@dimen/dimen_20sp"
-            android:text="24sp"
+            android:text="@{viewModel.result}"
             app:layout_constraintBottom_toTopOf="@+id/roll_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

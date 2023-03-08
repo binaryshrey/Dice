@@ -4,16 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.core.widget.NestedScrollView
+        android:background="@color/black"
         tools:context=".ui.about.AboutFragment"
         android:id="@+id/aboutNestedScrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <androidx.cardview.widget.CardView
+                app:cardBackgroundColor="@color/black"
                 android:id="@+id/logoCV"
                 android:layout_width="@dimen/dimen_64"
                 android:layout_height="@dimen/dimen_64"
@@ -51,7 +53,7 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="16dp"
                 android:text="DICE"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 app:fontFamily="@font/inter_semibold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -76,7 +78,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="App"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 app:fontFamily="@font/inter_semibold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -84,6 +86,7 @@
 
 
             <com.google.android.material.card.MaterialCardView
+                app:cardBackgroundColor="@color/black"
                 android:id="@+id/bugCV"
                 android:layout_width="@dimen/dimen_0"
                 android:layout_height="64dp"
@@ -107,7 +110,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
                         android:text="Report Bug"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="14sp"
                         app:fontFamily="@font/inter_semibold"
                         app:layout_constraintStart_toStartOf="parent"
@@ -123,7 +126,7 @@
                         android:alpha="0.6"
                         android:fontFamily="@font/inter"
                         android:text="Report bugs or request few features"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="12sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -134,6 +137,7 @@
 
 
             <com.google.android.material.card.MaterialCardView
+                app:cardBackgroundColor="@color/black"
                 android:id="@+id/rateAppCV"
                 android:layout_width="@dimen/dimen_0"
                 android:layout_height="64dp"
@@ -157,7 +161,7 @@
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/inter_semibold"
                         android:text="Rate DICE"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="14sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -172,7 +176,7 @@
                         android:alpha="0.6"
                         android:fontFamily="@font/inter"
                         android:text="If you like DICE, rate it on the Google Play Store"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="12sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -182,6 +186,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
+                app:cardBackgroundColor="@color/black"
                 android:id="@+id/supportAppCV"
                 android:layout_width="@dimen/dimen_0"
                 android:layout_height="64dp"
@@ -205,7 +210,7 @@
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/inter_semibold"
                         android:text="Support Development"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="14sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -220,7 +225,7 @@
                         android:alpha="0.6"
                         android:fontFamily="@font/inter"
                         android:text="If you really like DICE, consider supporting its development"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="12sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -246,7 +251,7 @@
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/inter_semibold"
                 android:text="Developer"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -288,7 +293,7 @@
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/inter_semibold"
                         android:text="Github"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="14sp"
                         app:layout_constraintStart_toEndOf="@+id/devIV"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -301,7 +306,7 @@
                         android:alpha="0.6"
                         android:fontFamily="@font/inter"
                         android:text="\@binaryShrey"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="12sp"
                         app:layout_constraintStart_toEndOf="@+id/devIV"
                         app:layout_constraintTop_toBottomOf="@+id/githubTV" />
