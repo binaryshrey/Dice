@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'org.jetbrains.kotlin.kapt'
     id 'com.google.gms.google-services'
 
 }
@@ -70,4 +71,7 @@ dependencies {
     //firebase-auth
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.google.android.gms:play-services-auth:20.4.0'
+
+    //lottie
+    implementation "com.airbnb.android:lottie:3.4.0"
 }

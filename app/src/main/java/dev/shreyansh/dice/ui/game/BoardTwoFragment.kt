@@ -1,9 +1,7 @@
 package dev.shreyansh.dice.ui.game
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -17,7 +15,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import dev.shreyansh.dice.R
-import dev.shreyansh.dice.databinding.FragmentBoardOneBinding
 import dev.shreyansh.dice.databinding.FragmentBoardTwoBinding
 import dev.shreyansh.dice.viewModel.DiceViewModel
 
@@ -27,32 +24,34 @@ class BoardTwoFragment : Fragment() {
     private lateinit var binding: FragmentBoardTwoBinding
     private val viewModel: DiceViewModel by activityViewModels()
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+
         (activity as AppCompatActivity).supportActionBar?.show()
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(),R.color.black)
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_board_two, container, false)
         binding.viewModel = viewModel
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = viewLifecycleOwner
         setHasOptionsMenu(true)
         viewModel.resetData()
         viewModel.result.observe(viewLifecycleOwner, Observer { value ->
             if (value != "") {
                 animateDice(binding)
+                animateDiceResult(binding)
             }
         })
+
         binding.rollButton.setOnClickListener {
+            binding.confetti.visibility = View.VISIBLE
             binding.rollButton.isEnabled=false
             binding.rollButton.isClickable=false
-            viewModel.rollBoardFour()
+            viewModel.rollBoardTwo()
             binding.rollButton.postDelayed(Runnable {
                 binding.rollButton.isEnabled=true
                 binding.rollButton.isClickable=true
-            } , 210)
-
+            } , 2000)
+            binding.rollButton.postDelayed(Runnable {
+                binding.confetti.visibility = View.INVISIBLE
+            } , 2000)
         }
 
         return binding.root
@@ -99,12 +98,11 @@ class BoardTwoFragment : Fragment() {
         googlesSignInClient.signOut()
         FirebaseAuth.getInstance().signOut()
         findNavController().navigate(R.id.action_boardTwoFragment_to_introFragment)
-        Log.d("BottomSheet", "Log Out successful!")
     }
 
     private fun animateDice(binding: FragmentBoardTwoBinding) {
         binding.dice1ImageView.animate().apply {
-            duration = 100
+            duration = 200
             rotationYBy(360f)
         }.withEndAction {
             binding.dice1ImageView.animate().apply {
@@ -113,7 +111,7 @@ class BoardTwoFragment : Fragment() {
             }
         }
         binding.dice2ImageView.animate().apply {
-            duration = 100
+            duration = 200
             rotationYBy(360f)
         }.withEndAction {
             binding.dice1ImageView.animate().apply {
@@ -123,4 +121,15 @@ class BoardTwoFragment : Fragment() {
         }
     }
 
+    private fun animateDiceResult(binding: FragmentBoardTwoBinding?) {
+        binding?.resultImageView?.animate()?.apply {
+            duration = 200
+            rotationYBy(360f)
+        }?.withEndAction {
+            binding.resultImageView.animate().apply {
+                duration = 200
+                rotationYBy(3600f)
+            }
+        }
+    }
 }

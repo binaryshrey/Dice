@@ -12,7 +12,6 @@ import java.io.IOException
 object PREFS{
     val THEME_KEY = stringPreferencesKey("THEME_KEY")
     val GAME_MODE = stringPreferencesKey("GAME_MODE")
-    //val IS_ONBOARD_FLOW_COMPLETE = booleanPreferencesKey("IS_ONBOARD_FLOW_COMPLETE")
 }
 
 class DiceDataStore private constructor(context: Context) {
@@ -76,23 +75,4 @@ class DiceDataStore private constructor(context: Context) {
             val mode = pref[PREFS.GAME_MODE] ?: "None"
             mode
         }
-
-    //on-board prefs
-//    suspend fun setIsOnBoardFlowComplete(complete: Boolean) {
-//        dataStore.edit { pref ->
-//            pref[PREFS.IS_ONBOARD_FLOW_COMPLETE] = complete
-//        }
-//    }
-//    fun getIsOnBoardFlowComplete(): Flow<Boolean> = dataStore.data
-//        .catch { exception ->
-//            if (exception is IOException) {
-//                emit(emptyPreferences())
-//            } else {
-//                throw exception
-//            }
-//        }
-//        .map { pref ->
-//            val onBoardModeComplete = pref[PREFS.IS_ONBOARD_FLOW_COMPLETE] ?: false
-//            onBoardModeComplete
-//        }
 }
