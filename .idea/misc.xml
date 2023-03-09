@@ -9,6 +9,7 @@
         <entry key="app/src/main/res/drawable/dice_1.xml" value="0.30666666666666664" />
         <entry key="app/src/main/res/drawable/dice_6.xml" value="0.116" />
         <entry key="app/src/main/res/drawable/github.xml" value="0.196" />
+        <entry key="app/src/main/res/drawable/ic_group_14.xml" value="0.196" />
         <entry key="app/src/main/res/drawable/ic_logo_dark.xml" value="0.116" />
         <entry key="app/src/main/res/layout-night/board_two.xml" value="0.18371335504885994" />
         <entry key="app/src/main/res/layout-night/fragment_about.xml" value="0.1" />
@@ -18,10 +19,10 @@
         <entry key="app/src/main/res/layout-night/fragment_board_two.xml" value="0.18371335504885994" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_about.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_board_four.xml" value="0.18501628664495115" />
-        <entry key="app/src/main/res/layout/fragment_board_one.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_board_four.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/fragment_board_one.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_board_three.xml" value="0.19381107491856678" />
-        <entry key="app/src/main/res/layout/fragment_board_two.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/fragment_board_two.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_game.xml" value="0.1897644927536232" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3348321533203125" />
         <entry key="app/src/main/res/layout/fragment_intro.xml" value="0.2910184850644826" />

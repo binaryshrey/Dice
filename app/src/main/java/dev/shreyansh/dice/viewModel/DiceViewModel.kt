@@ -7,7 +7,6 @@ import android.os.VibrationEffect
 import android.os.Vibrator
 import androidx.lifecycle.*
 import dev.shreyansh.dice.R
-import dev.shreyansh.dice.dataStore.DataStoreManager
 import dev.shreyansh.dice.utils.DiceDataStore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -124,7 +123,7 @@ class DiceViewModel(application: Application) : AndroidViewModel(application) {
         provideHapticFeedback()
         val randomIntOne : Int = Random.nextInt(6) + 1
         _dice1.value = setImage(randomIntOne)
-        _result.value = "You Rolled : ${(randomIntOne).toString()}"
+        _result.value = "${(randomIntOne).toString()}"
     }
 
     fun rollBoardTwo(){
@@ -133,7 +132,7 @@ class DiceViewModel(application: Application) : AndroidViewModel(application) {
         val randomIntTwo : Int = Random.nextInt(6) + 1
         _dice1.value = setImage(randomIntOne)
         _dice2.value = setImage(randomIntTwo)
-        _result.value = "You Rolled : ${(randomIntOne+randomIntTwo).toString()}"
+        _result.value = "${(randomIntOne+randomIntTwo).toString()}"
     }
 
     fun rollBoardThree(){
@@ -144,7 +143,7 @@ class DiceViewModel(application: Application) : AndroidViewModel(application) {
         _dice1.value = setImage(randomIntOne)
         _dice2.value = setImage(randomIntTwo)
         _dice3.value = setImage(randomIntThree)
-        _result.value = "You Rolled : ${(randomIntOne+randomIntTwo+randomIntThree).toString()}"
+        _result.value = "${(randomIntOne+randomIntTwo+randomIntThree).toString()}"
     }
 
     fun rollBoardFour(){
@@ -158,7 +157,7 @@ class DiceViewModel(application: Application) : AndroidViewModel(application) {
         _dice2.value = setImage(randomIntTwo)
         _dice3.value = setImage(randomIntThree)
         _dice4.value = setImage(randomIntFour)
-        _result.value = "You Rolled : ${(randomIntOne+randomIntTwo+randomIntThree+randomIntFour).toString()}"
+        _result.value = "${(randomIntOne+randomIntTwo+randomIntThree+randomIntFour).toString()}"
 
     }
 
