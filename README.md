@@ -9,7 +9,7 @@ Dice 🎲 is a minimalistic, intuitive and an ad-free dice-roll application📱 
 
 Download the latest version :
 
-[![Dice App](https://img.shields.io/badge/DICE%20%F0%9F%8E%B2-APK-orange.svg?style=for-the-badge&logo=android)](https://github.com/binaryshrey/Dice/releases/download/v1.0.1/dice-release.apk)
+[![Dice App](https://img.shields.io/badge/DICE%20%F0%9F%8E%B2-APK-orange.svg?style=for-the-badge&logo=android)](https://github.com/binaryshrey/Dice/releases/download/v1.2.0/dice-release.apk)
 
 <br />
 
@@ -25,6 +25,7 @@ Download the latest version :
   - [Jetpack Navigation](https://developer.android.com/guide/navigation) : Navigation refers to the interactions that allow users to navigate across, into, and back out from the different pieces of content within your app
   - [Jetpack Preference Setting](https://developer.android.com/develop/ui/views/components/settings) : Settings allow users to change the functionality and behavior of an application.
   - [Splash Screen API](https://developer.android.com/develop/ui/views/launch/splash-screen) : Splash Screen is usually the first screen visible to the user when the application is launched.
+  - [FireBase Auth](https://firebase.google.com/docs/auth) : Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to your app
   
 - [Material Components for Android](https://github.com/material-components/material-components-android) : Modular and customizable Material Design UI components for Android.
 - [Figma](https://figma.com/) : Figma is a vector graphics editor and prototyping tool which is primarily web-based.
