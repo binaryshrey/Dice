@@ -9,7 +9,7 @@ Dice 🎲 is a minimalistic, intuitive and an ad-free dice-roll application📱 
 
 Download the latest version :
 
-<a href="https://play.google.com/store/apps/details?id=dev.shreyansh.dice"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height=60px /></a>
+[![Dice App](https://img.shields.io/badge/DICE%20%F0%9F%8E%B2-APK-orange.svg?style=for-the-badge&logo=android)](https://github.com/binaryshrey/Dice/releases/download/v1.2.0/dice-release.apk)
 
 <br />
 
