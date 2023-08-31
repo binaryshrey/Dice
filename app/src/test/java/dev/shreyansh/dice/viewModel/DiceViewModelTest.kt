@@ -8,6 +8,7 @@ import dev.shreyansh.dice.utils.getOrAwaitValueTest
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import dev.shreyansh.dice.R
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
@@ -78,6 +79,21 @@ class DiceViewModelTest{
         //THEN
         var eventGameStartLiveData = viewModel.eventGameStart.getOrAwaitValueTest()
         assertThat(eventGameStartLiveData).isFalse()
+    }
+
+    @Test
+    fun onPrefsReset_onResetData_returnsDefaultData(){
+        //GIVEN
+
+        //WHEN
+        viewModel.resetData()
+        //THEN
+        assertThat(viewModel.dice1.getOrAwaitValueTest()).isEqualTo(R.drawable.empty_dice)
+        assertThat(viewModel.dice2.getOrAwaitValueTest()).isEqualTo(R.drawable.empty_dice)
+        assertThat(viewModel.dice3.getOrAwaitValueTest()).isEqualTo(R.drawable.empty_dice)
+        assertThat(viewModel.dice4.getOrAwaitValueTest()).isEqualTo(R.drawable.empty_dice)
+        assertThat(viewModel.result.getOrAwaitValueTest()).isEqualTo("")
+
     }
 
 
