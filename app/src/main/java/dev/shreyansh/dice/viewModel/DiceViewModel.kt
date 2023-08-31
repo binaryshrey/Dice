@@ -6,14 +6,17 @@ import android.os.Build
 import android.os.VibrationEffect
 import android.os.Vibrator
 import androidx.lifecycle.*
+import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.shreyansh.dice.R
 import dev.shreyansh.dice.utils.DiceDataStore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import timber.log.Timber
+import javax.inject.Inject
 import kotlin.random.Random
 
-class DiceViewModel(application: Application) : AndroidViewModel(application) {
+@HiltViewModel
+class DiceViewModel @Inject constructor(application: Application) : AndroidViewModel(application) {
 
     val developerURI : String = "https://github.com/binaryshrey"
     val appURI : String = "https://github.com/binaryshrey/Dice"

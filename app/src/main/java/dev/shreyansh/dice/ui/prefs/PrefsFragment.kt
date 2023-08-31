@@ -12,12 +12,13 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import dagger.hilt.android.AndroidEntryPoint
 import dev.shreyansh.dice.R
 import dev.shreyansh.dice.databinding.FragmentPrefsBinding
 import dev.shreyansh.dice.viewModel.DiceViewModel
 import timber.log.Timber
 
-
+@AndroidEntryPoint
 class PrefsFragment : Fragment() {
 
     private lateinit var binding: FragmentPrefsBinding

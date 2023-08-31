@@ -6,12 +6,11 @@ import android.net.ConnectivityManager
 import android.net.Network
 import android.net.NetworkRequest
 import androidx.lifecycle.LiveData
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
 
-class NetworkConnection(private val connectivityManager: ConnectivityManager) : LiveData<Boolean>() {
+class NetworkConnection @Inject constructor(@ApplicationContext private val context: Context, private val connectivityManager: ConnectivityManager) : LiveData<Boolean>() {
 
-    constructor(application: Application) : this(
-        application.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-    )
 
     private val networkCallback = object : ConnectivityManager.NetworkCallback(){
 

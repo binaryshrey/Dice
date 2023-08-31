@@ -10,11 +10,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import dagger.hilt.android.AndroidEntryPoint
 import dev.shreyansh.dice.R
 import dev.shreyansh.dice.databinding.FragmentAboutBinding
 import dev.shreyansh.dice.viewModel.DiceViewModel
 
 
+@AndroidEntryPoint
 class AboutFragment : Fragment() {
 
     private lateinit var binding : FragmentAboutBinding
