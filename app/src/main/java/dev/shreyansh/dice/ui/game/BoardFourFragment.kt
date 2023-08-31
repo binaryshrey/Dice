@@ -14,11 +14,13 @@ import androidx.preference.PreferenceManager
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
+import dagger.hilt.android.AndroidEntryPoint
 import dev.shreyansh.dice.R
 import dev.shreyansh.dice.databinding.FragmentBoardFourBinding
 import dev.shreyansh.dice.viewModel.DiceViewModel
 
 
+@AndroidEntryPoint
 class BoardFourFragment : Fragment() {
 
     private lateinit var binding : FragmentBoardFourBinding

@@ -2,7 +2,6 @@ package dev.shreyansh.dice.ui.intro
 
 import android.app.Activity
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -20,23 +19,26 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import dagger.hilt.android.AndroidEntryPoint
 import dev.shreyansh.dice.R
 import dev.shreyansh.dice.databinding.FragmentIntroBinding
 import dev.shreyansh.dice.utils.NetworkConnection
 import dev.shreyansh.dice.viewModel.DiceViewModel
 import timber.log.Timber
+import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class IntroFragment : Fragment() {
 
     private var isConnected = false
     private lateinit var auth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
-    private lateinit var networkConnection: NetworkConnection
     private lateinit var binding : FragmentIntroBinding
     private val viewModel: DiceViewModel by activityViewModels()
     private var getIsGameModeSelectionComplete : Boolean = false
     private var gameMode : String = ""
+
+    @Inject lateinit var networkConnection: NetworkConnection
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -53,7 +55,6 @@ class IntroFragment : Fragment() {
 
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
-        networkConnection = NetworkConnection(requireNotNull(this.activity).application)
         networkConnection.observe(viewLifecycleOwner, Observer { connected ->
             isConnected = connected
         })
@@ -88,7 +89,7 @@ class IntroFragment : Fragment() {
                 } else {
                     viewModel.onLoginCancel()
                     Toast.makeText(context, task.exception.toString(), Toast.LENGTH_SHORT).show()
-                    Log.e("Login", task.exception.toString())
+                    Timber.e( task.exception.toString())
                 }
             }
             if (result.resultCode == Activity.RESULT_CANCELED) {
@@ -104,12 +105,12 @@ class IntroFragment : Fragment() {
                 binding.loadingTicketProgress.visibility = View.GONE
                 findNavController().navigate(R.id.action_introFragment_to_prefsFragment)
                 viewModel.onLoginComplete()
-                Log.i("Login", "Login Success!")
+                Timber.i( "Login Success!")
             } else {
                 viewModel.onLoginCancel()
                 binding.loadingTicketProgress.visibility = View.GONE
                 Toast.makeText(context, it.exception.toString(), Toast.LENGTH_SHORT).show()
-                Log.e("Login", it.exception.toString())
+                Timber.e( it.exception.toString())
             }
         }
     }
