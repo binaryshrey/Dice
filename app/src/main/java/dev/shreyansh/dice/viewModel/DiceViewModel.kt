@@ -9,6 +9,7 @@ import androidx.lifecycle.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.shreyansh.dice.R
 import dev.shreyansh.dice.utils.DiceDataStore
+import dev.shreyansh.dice.utils.setImage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -162,19 +163,6 @@ class DiceViewModel @Inject constructor(application: Application) : AndroidViewM
         _dice4.value = setImage(randomIntFour)
         _result.value = "${(randomIntOne+randomIntTwo+randomIntThree+randomIntFour).toString()}"
 
-    }
-
-
-    private fun setImage(rand : Int): Int {
-        val res = when(rand){
-            1 -> R.drawable.dice_1
-            2 -> R.drawable.dice_2
-            3 -> R.drawable.dice_3
-            4 -> R.drawable.dice_4
-            5 -> R.drawable.dice_5
-            else -> R.drawable.dice_6
-        }
-        return res
     }
 
 }
